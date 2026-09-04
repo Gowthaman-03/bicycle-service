@@ -1,0 +1,402 @@
+<!-- <section id="home" class="hero">
+   Slow-moving background
+  <div class="hero-image" #heroImage></div>
+
+   Second/fixed visual layer
+  <div class="hero-fixed-layer" #heroFixedLayer></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">PROFESSIONAL BICYCLE SERVICE</p>
+
+    <h1>
+      Ride.
+      <br />
+      Repair.
+      <br />
+      <span>Repeat.</span>
+    </h1>
+
+    <p class="hero-description">
+      Expert bicycle servicing, repairs and maintenance to keep every ride running smoothly.
+    </p>
+
+    <div class="hero-actions">
+      <a routerLink="/appointment" class="hero-primary">
+        Book a Service
+        <i class="pi pi-arrow-right"></i>
+      </a>
+
+      <a href="#services" class="hero-secondary"> Explore Services </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <i class="pi pi-arrow-down"></i>
+  </div>
+</section> -->
+
+<section id="home" class="hero">
+  <!-- Blue background -->
+  <div class="hero-blue-bg"></div>
+
+  <!-- Decorative SVG -->
+  <div class="hero-svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+      <defs>
+        <!-- Style settings for lines: primary linework, secondary details, and blueprint guides -->
+        <style>
+          .bg-guide {
+            stroke: #e25845;
+            stroke-width: 0.75;
+            stroke-dasharray: 4, 4;
+            opacity: 0.35;
+            fill: none;
+          }
+          .dim-line {
+            stroke: #e25845;
+            stroke-width: 1;
+            stroke-dasharray: 6, 4;
+            opacity: 0.55;
+            fill: none;
+          }
+          .marker {
+            stroke: #e25845;
+            stroke-width: 1.2;
+            opacity: 0.7;
+            fill: none;
+          }
+          .frame-main {
+            stroke: #e25845;
+            stroke-width: 3.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+          }
+          .frame-sub {
+            stroke: #e25845;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+          }
+          .detail-fine {
+            stroke: #e25845;
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+          }
+          .spoke {
+            stroke: #e25845;
+            stroke-width: 0.8;
+            opacity: 0.6;
+          }
+          .crosshair {
+            stroke: #e25845;
+            stroke-width: 1;
+            opacity: 0.8;
+          }
+          .text-tech {
+            fill: #e25845;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            opacity: 0.65;
+            letter-spacing: 1px;
+          }
+        </style>
+
+        <!-- Crosshair Marker for Hubs / Centers -->
+        <g id="hub-crosshair">
+          <line x1="-18" y1="0" x2="18" y2="0" class="crosshair" />
+          <line x1="0" y1="-18" x2="0" y2="18" class="crosshair" />
+          <circle cx="0" cy="0" r="4" class="marker" />
+          <circle cx="0" cy="0" r="10" class="dim-line" />
+        </g>
+
+        <!-- 16-Spoke Pattern Template (radius ~150) -->
+        <g id="wheel-spokes">
+          <line x1="0" y1="0" x2="148" y2="0" class="spoke" />
+          <line x1="0" y1="0" x2="-148" y2="0" class="spoke" />
+          <line x1="0" y1="0" x2="0" y2="148" class="spoke" />
+          <line x1="0" y1="0" x2="0" y2="-148" class="spoke" />
+          <line x1="0" y1="0" x2="104.6" y2="104.6" class="spoke" />
+          <line x1="0" y1="0" x2="-104.6" y2="104.6" class="spoke" />
+          <line x1="0" y1="0" x2="104.6" y2="-104.6" class="spoke" />
+          <line x1="0" y1="0" x2="-104.6" y2="-104.6" class="spoke" />
+          <line x1="0" y1="0" x2="136.7" y2="56.6" class="spoke" />
+          <line x1="0" y1="0" x2="-136.7" y2="56.6" class="spoke" />
+          <line x1="0" y1="0" x2="136.7" y2="-56.6" class="spoke" />
+          <line x1="0" y1="0" x2="-136.7" y2="-56.6" class="spoke" />
+          <line x1="0" y1="0" x2="56.6" y2="136.7" class="spoke" />
+          <line x1="0" y1="0" x2="-56.6" y2="136.7" class="spoke" />
+          <line x1="0" y1="0" x2="56.6" y2="-136.7" class="spoke" />
+          <line x1="0" y1="0" x2="-56.6" y2="-136.7" class="spoke" />
+        </g>
+      </defs>
+
+      <!-- ==================== 1. TECHNICAL DRAFTING & BLUEPRINT GUIDES ==================== -->
+      <g id="drafting-guides">
+        <!-- Wheelbase datum line -->
+        <line x1="120" y1="540" x2="1080" y2="540" class="dim-line" />
+
+        <!-- Steering axis / Fork projection line -->
+        <line x1="745" y1="130" x2="945" y2="615" class="bg-guide" />
+
+        <!-- Seat tube projection line -->
+        <line x1="435" y1="150" x2="575" y2="630" class="bg-guide" />
+
+        <!-- Horizontal Top Tube datum -->
+        <line x1="260" y1="315" x2="950" y2="315" class="bg-guide" />
+
+        <!-- Ground clearance datum -->
+        <line x1="100" y1="700" x2="1100" y2="700" class="dim-line" />
+
+        <!-- Dimension annotations & Ticks -->
+        <!-- Wheelbase dimension -->
+        <line x1="280" y1="730" x2="900" y2="730" class="marker" />
+        <line x1="280" y1="720" x2="280" y2="740" class="marker" />
+        <line x1="900" y1="720" x2="900" y2="740" class="marker" />
+        <text x="560" y="745" class="text-tech" text-anchor="middle">WB: 1040 mm</text>
+
+        <!-- Top Tube length dimension -->
+        <line x1="480" y1="280" x2="790" y2="280" class="marker" />
+        <line x1="480" y1="272" x2="480" y2="288" class="marker" />
+        <line x1="790" y1="272" x2="790" y2="288" class="marker" />
+        <text x="630" y="272" class="text-tech" text-anchor="middle">ETT: 565 mm</text>
+
+        <!-- Head Angle arc -->
+        <path d="M 850 540 A 50 50 0 0 0 838 505" class="marker" />
+        <text x="860" y="525" class="text-tech">73.5°</text>
+
+        <!-- Blueprint Grid Coordinate Markers -->
+        <text x="40" y="50" class="text-tech">SEC_01 // CAD-REF: BIKE-GEO-V2</text>
+        <text x="40" y="70" class="text-tech">SCALE: 1:10 [VECT-RAW]</text>
+      </g>
+
+      <!-- ==================== 2. REAR WHEEL & DRIVETRAIN ==================== -->
+      <g id="rear-wheel" transform="translate(280, 540)">
+        <!-- Tire Outer / Inner Profiles -->
+        <circle cx="0" cy="0" r="160" class="frame-sub" />
+        <circle cx="0" cy="0" r="150" class="detail-fine" />
+        <circle cx="0" cy="0" r="142" class="frame-main" />
+        <circle cx="0" cy="0" r="138" class="detail-fine" />
+
+        <!-- Spokes -->
+        <use href="#wheel-spokes" />
+
+        <!-- Rear Cassette & Hub -->
+        <circle cx="0" cy="0" r="32" class="frame-sub" />
+        <circle cx="0" cy="0" r="24" class="detail-fine" />
+        <circle cx="0" cy="0" r="14" class="frame-main" />
+        <use href="#hub-crosshair" />
+      </g>
+
+      <!-- ==================== 3. FRONT WHEEL & FORK ==================== -->
+      <g id="front-wheel" transform="translate(900, 540)">
+        <!-- Tire Outer / Inner Profiles -->
+        <circle cx="0" cy="0" r="160" class="frame-sub" />
+        <circle cx="0" cy="0" r="150" class="detail-fine" />
+        <circle cx="0" cy="0" r="142" class="frame-main" />
+        <circle cx="0" cy="0" r="138" class="detail-fine" />
+
+        <!-- Spokes -->
+        <use href="#wheel-spokes" />
+
+        <!-- Front Hub -->
+        <circle cx="0" cy="0" r="16" class="frame-sub" />
+        <circle cx="0" cy="0" r="10" class="frame-main" />
+        <use href="#hub-crosshair" />
+      </g>
+
+      <!-- ==================== 4. BICYCLE FRAME ==================== -->
+      <g id="frame">
+        <!-- Bottom Bracket Assembly (520, 540) -->
+        <circle cx="520" cy="540" r="20" class="frame-main" />
+        <circle cx="520" cy="540" r="45" class="frame-sub" />
+        <!-- Outer Chainring -->
+        <circle cx="520" cy="540" r="38" class="detail-fine" stroke-dasharray="3,2" />
+
+        <!-- Chainstays (Rear Dropout to BB) -->
+        <line x1="280" y1="540" x2="520" y2="540" class="frame-main" />
+        <line x1="280" y1="535" x2="515" y2="532" class="detail-fine" />
+
+        <!-- Seatstays (Rear Dropout to Seat Lug 480, 315) -->
+        <line x1="280" y1="540" x2="480" y2="315" class="frame-main" />
+        <line x1="275" y1="535" x2="475" y2="310" class="detail-fine" />
+
+        <!-- Seat Tube (BB 520,540 to Seat Lug 480,315) -->
+        <line x1="520" y1="540" x2="480" y2="315" class="frame-main" />
+        <line x1="524" y1="540" x2="484" y2="315" class="detail-fine" />
+
+        <!-- Head Tube (Lower 775, 360 to Upper 805, 275) -->
+        <line x1="775" y1="360" x2="805" y2="275" class="frame-main" stroke-width="5" />
+        <line x1="772" y1="362" x2="802" y2="277" class="detail-fine" />
+
+        <!-- Down Tube (BB 520,540 to Head Tube Lower 775,360) -->
+        <line x1="520" y1="540" x2="775" y2="360" class="frame-main" stroke-width="4.5" />
+        <line x1="522" y1="545" x2="777" y2="365" class="detail-fine" />
+
+        <!-- Top Tube (Seat Lug 480,315 to Head Tube Upper 798,295) -->
+        <line x1="480" y1="315" x2="798" y2="295" class="frame-main" />
+        <line x1="480" y1="320" x2="798" y2="300" class="detail-fine" />
+
+        <!-- Front Fork (Head Tube Lower 775,360 to Front Hub 900,540) -->
+        <!-- Suspension / Rigid Fork Stanchions -->
+        <line x1="775" y1="360" x2="840" y2="445" class="frame-main" stroke-width="4" />
+        <line x1="840" y1="445" x2="900" y2="540" class="frame-main" stroke-width="3" />
+        <circle cx="840" cy="445" r="5" class="marker" />
+        <!-- Fork Seal Collar -->
+        <!-- Brake Arch / Bridge -->
+        <path d="M 830 445 Q 845 430 855 450" class="detail-fine" />
+      </g>
+
+      <!-- ==================== 5. WATER BOTTLE & CAGE (ON DOWN TUBE) ==================== -->
+      <g id="water-bottle" transform="translate(620, 470) rotate(-35)">
+        <!-- Bottle Cage Bracket -->
+        <path d="M -15 -8 L 50 -8 L 55 -5 L 55 15 L 50 18 L -15 18" class="frame-sub" />
+        <line x1="-5" y1="5" x2="40" y2="5" class="dim-line" />
+        <!-- Water Bottle Body -->
+        <rect x="-10" y="-5" width="55" height="20" rx="3" class="detail-fine" />
+        <!-- Bottle Neck & Cap -->
+        <path d="M 45 -2 L 55 -2 L 55 12 L 45 12" class="detail-fine" />
+        <rect x="55" y="1" width="6" height="8" rx="1" class="frame-sub" />
+        <!-- Retaining strap detail -->
+        <path d="M 15 -10 L 25 -10 L 22 20 L 12 20 Z" class="bg-guide" />
+      </g>
+
+      <!-- ==================== 6. SEATPOST & SADDLE ==================== -->
+      <g id="saddle-assembly">
+        <!-- Seatpost (Extension from Seat Lug) -->
+        <line x1="480" y1="315" x2="455" y2="235" class="frame-main" stroke-width="3" />
+        <line x1="450" y1="240" x2="465" y2="240" class="marker" stroke-width="3" />
+        <!-- Clamp -->
+
+        <!-- Saddle Rails -->
+        <line x1="420" y1="230" x2="480" y2="225" class="detail-fine" />
+
+        <!-- Saddle Contour Profile -->
+        <path
+          d="M 395 220 C 420 215, 450 218, 485 222 C 500 224, 505 230, 495 234 C 475 236, 455 230, 435 228 C 410 228, 400 232, 395 220 Z"
+          class="frame-main"
+        />
+        <path d="M 405 222 Q 450 223 490 227" class="detail-fine" />
+      </g>
+
+      <!-- ==================== 7. COCKPIT (STEM & HANDLEBARS) ==================== -->
+      <g id="cockpit">
+        <!-- Steerer Tube Extension -->
+        <line x1="805" y1="275" x2="818" y2="238" class="frame-main" stroke-width="3" />
+
+        <!-- Stem -->
+        <path d="M 815 245 L 850 230" class="frame-main" stroke-width="5" />
+        <circle cx="850" cy="230" r="6" class="marker" />
+        <!-- Handlebar Clamp -->
+
+        <!-- Flat / Riser Handlebar -->
+        <path d="M 830 225 L 850 230 L 878 222" class="frame-main" stroke-width="3.5" />
+        <!-- Grip & Bar End -->
+        <line
+          x1="870"
+          y1="224"
+          x2="890"
+          y2="218"
+          class="frame-main"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+        <!-- Brake Lever -->
+        <path d="M 865 233 Q 880 248 895 245" class="frame-sub" />
+
+        <!-- Brake Cables / Housing (Arched Curves) -->
+        <path d="M 865 235 Q 840 280 780 370" class="bg-guide" />
+        <path d="M 870 235 Q 830 300 520 535" class="bg-guide" />
+      </g>
+
+      <!-- ==================== 8. PEDALS & CRANK ARMS ==================== -->
+      <g id="crankset">
+        <!-- Drive-side Crank Arm (Angle ~ 135 deg) -->
+        <line x1="520" y1="540" x2="465" y2="605" class="frame-main" stroke-width="4.5" />
+        <!-- Drive-side Pedal -->
+        <rect
+          x="445"
+          y="600"
+          width="30"
+          height="10"
+          rx="2"
+          transform="rotate(15, 460, 605)"
+          class="frame-sub"
+        />
+        <circle cx="465" cy="605" r="3" class="marker" />
+
+        <!-- Non-drive Crank Arm (Opposite ~ 315 deg) -->
+        <line
+          x1="520"
+          y1="540"
+          x2="575"
+          y2="475"
+          class="frame-sub"
+          stroke-width="3.5"
+          opacity="0.6"
+        />
+        <!-- Non-drive Pedal -->
+        <rect
+          x="565"
+          y="470"
+          width="26"
+          height="8"
+          rx="2"
+          transform="rotate(15, 575, 475)"
+          class="frame-sub"
+          opacity="0.6"
+        />
+
+        <!-- Upper & Lower Chain Runs -->
+        <line x1="280" y1="512" x2="520" y2="495" class="frame-sub" stroke-dasharray="4,2" />
+        <line x1="280" y1="565" x2="520" y2="585" class="frame-sub" stroke-dasharray="4,2" />
+
+        <!-- Rear Derailleur Pulley Cage -->
+        <path d="M 280 540 L 290 575 L 305 585" class="frame-sub" />
+        <circle cx="290" cy="575" r="5" class="detail-fine" />
+        <circle cx="305" cy="585" r="5" class="detail-fine" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Existing visual layers -->
+  <div class="hero-image" #heroImage></div>
+  <div class="hero-fixed-layer" #heroFixedLayer></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">PROFESSIONAL BICYCLE SERVICE</p>
+
+    <h1>
+      Ride.
+      <br />
+      Repair.
+      <br />
+      <span>Repeat.</span>
+    </h1>
+
+    <p class="hero-description">
+      Expert bicycle servicing, repairs and maintenance to keep every ride running smoothly.
+    </p>
+
+    <div class="hero-actions">
+      <a routerLink="/appointment" class="hero-primary">
+        Book a Service
+        <i class="pi pi-arrow-right"></i>
+      </a>
+
+      <a href="#services" class="hero-secondary"> Explore Services </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <i class="pi pi-arrow-down"></i>
+  </div>
+</section>

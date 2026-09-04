@@ -1,0 +1,121 @@
+.booking-cta {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+  z-index: 10;
+  align-items: center;
+  // background: rgba(0, 0, 0, 0.68);
+  background: #050505;
+
+  overflow: hidden;
+
+  color: #fff;
+}
+
+.booking-background {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url('/assets/images/booking-bike.jpg');
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.booking-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.68);
+}
+
+.booking-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 80px));
+
+  margin: auto;
+}
+
+.booking-content h2 {
+  max-width: 1000px;
+
+  margin: 0;
+
+  font-size: clamp(4rem, 8vw, 8rem);
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+
+  text-transform: uppercase;
+}
+
+.booking-content h2 span {
+  display: block;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px #fff;
+}
+
+.booking-content > p:not(.section-eyebrow) {
+  max-width: 500px;
+
+  margin: 35px 0;
+
+  color: #ccc;
+
+  line-height: 1.7;
+}
+
+.booking-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px 28px;
+
+  background: #fff;
+
+  color: #111;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  transition: transform 0.25s ease;
+}
+
+.booking-button:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+  .booking-cta {
+    min-height: 600px;
+  }
+
+  .booking-content {
+    width: calc(100% - 30px);
+  }
+
+  .booking-content h2 {
+    font-size: clamp(3.3rem, 16vw, 5rem);
+  }
+}

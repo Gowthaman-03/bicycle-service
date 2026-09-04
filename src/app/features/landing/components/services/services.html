@@ -1,0 +1,46 @@
+<section id="services" class="services section">
+  <div class="services-header">
+    <div>
+      <p class="section-eyebrow">WHAT WE DO</p>
+
+      <h2>
+        Our
+        <span>Services</span>
+      </h2>
+    </div>
+
+    <p class="services-intro">
+      From small adjustments to complete servicing, we've got your bicycle covered.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    @for (service of services; track service.number) {
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-number">
+            {{ service.number }}
+          </span>
+
+          <i [class]="service.icon"></i>
+        </div>
+
+        <div class="service-content">
+          <h3>
+            {{ service.title }}
+          </h3>
+
+          <p>
+            {{ service.description }}
+          </p>
+        </div>
+
+        <a routerLink="/appointment" class="service-link">
+          Book
+
+          <i class="pi pi-arrow-up-right"></i>
+        </a>
+      </article>
+    }
+  </div>
+</section>

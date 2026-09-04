@@ -1,0 +1,26 @@
+<section id="gallery" class="gallery">
+  <div class="gallery-header">
+    <div>
+      <p class="section-eyebrow">OUR WORK</p>
+
+      <h2>
+        The
+        <span>Workshop</span>
+      </h2>
+    </div>
+
+    <p>A closer look at the bikes, tools and people behind our workshop.</p>
+  </div>
+
+  <div class="gallery-grid">
+    @for (item of images; track item.image) {
+      <div class="gallery-item">
+        <img [src]="item.image" [alt]="item.alt" loading="lazy" />
+
+        <div class="gallery-overlay">
+          <i class="pi pi-arrow-up-right"></i>
+        </div>
+      </div>
+    }
+  </div>
+</section>

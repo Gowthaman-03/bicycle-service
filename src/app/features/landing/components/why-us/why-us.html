@@ -1,0 +1,41 @@
+<section class="why-us">
+  <div class="why-container">
+    <div class="why-header">
+      <p class="section-eyebrow">WHY CHOOSE US</p>
+
+      <h2>
+        Built for
+        <span>riders.</span>
+      </h2>
+
+      <p class="why-intro">
+        Whether you ride every day or only on weekends, we make sure your bicycle is ready for the
+        road.
+      </p>
+    </div>
+
+    <div class="features">
+      @for (feature of features; track feature.number) {
+        <article class="feature">
+          <div class="feature-number">
+            {{ feature.number }}
+          </div>
+
+          <div class="feature-content">
+            <h3>
+              {{ feature.title }}
+            </h3>
+
+            <p>
+              {{ feature.description }}
+            </p>
+          </div>
+
+          <div class="feature-arrow">
+            <i class="pi pi-arrow-up-right"></i>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+/* You can add global styles to this file, and also import other style files */
+:root {
+  /* =====================
+     BRAND
+  ====================== */
+
+  --primary: #ff5a00;
+  --primary-hover: #ff7417;
+  --primary-dark: #d94700;
+
+  /* =====================
+     BACKGROUNDS
+  ====================== */
+
+  --bg-main: #050505;
+  --bg-section: #0b0b0b;
+  --bg-elevated: #111111;
+
+  /* =====================
+     CARDS
+  ====================== */
+
+  --card-bg: #141414;
+  --card-hover: #1a1a1a;
+
+  /* =====================
+     TEXT
+  ====================== */
+
+  --text-primary: #f5f5f5;
+  --text-secondary: #b8b8b8;
+  --text-muted: #777777;
+
+  /* =====================
+     BORDERS
+  ====================== */
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: #ff5a00;
+
+  /* =====================
+     EFFECTS
+  ====================== */
+
+  --orange-glow: rgba(255, 90, 0, 0.25);
+  /*here*/
+  /* BRAND */
+  --orange: #ff5a00;
+  --orange-hover: #ff7a00;
+  --orange-dark: #d94700;
+
+  /* BACKGROUNDS */
+  --black: #050505;
+  --surface: #0d0d0d;
+  --card: #141414;
+  --card-hover: #1a1a1a;
+
+  /* METALLIC */
+  --steel: #2a2a2a;
+  --gray: #6b6b6b;
+  --silver: #b8b8b8;
+
+  /* TEXT */
+  --white: #f5f5f5;
+  --text-muted: #9b9b9b;
+
+  /* EFFECTS */
+  // --orange-glow: rgba(255, 90, 0, 0.35);
+  --orange-soft: rgba(255, 90, 0, 0.12);
+
+  /* BORDERS */
+  // --border: rgba(255, 255, 255, 0.08);
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+
+  --heading-sm: 2rem;
+  --heading-md: 3rem;
+  --heading-lg: 5rem;
+  --heading-xl: 7rem;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  /* ACCENTS from here */
+  --background: #f4f3ef;
+
+  --surface: #ffffff;
+
+  --dark: #111111;
+
+  --text: #161616;
+
+  --muted: #737373;
+
+  // --border: #deddd8;
+
+  --accent: #d8ff3e;
+
+  --font-display: 'Archivo Black', sans-serif;
+  --font-family: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--background);
+
+  color: var(--text);
+
+  font-family: var(--font-body);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+::selection {
+  background: #111;
+
+  color: #fff;
+}

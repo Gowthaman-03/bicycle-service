@@ -1,0 +1,41 @@
+<header class="navbar" [class.navbar-scrolled]="isScrolled">
+  <div class="navbar-inner">
+    <!-- LOGO -->
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <img src="assets/images/logo.png" alt="Cycle Service" />
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+
+      <a routerLink="/appointment" class="nav-book"> Book Service </a>
+    </nav>
+
+    <!-- MOBILE BUTTON -->
+    <p-button
+      class="mobile-menu-button"
+      icon="pi pi-bars"
+      [text]="true"
+      (onClick)="mobileMenuVisible = true"
+      ariaLabel="Open navigation"
+    />
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<p-drawer [(visible)]="mobileMenuVisible" position="right" styleClass="mobile-drawer">
+  <div class="mobile-nav">
+    <a href="#home" (click)="closeMenu()">Home</a>
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#services" (click)="closeMenu()">Services</a>
+    <a href="#gallery" (click)="closeMenu()">Gallery</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+
+    <a routerLink="/appointment" class="mobile-book" (click)="closeMenu()"> Book Service </a>
+  </div>
+</p-drawer>

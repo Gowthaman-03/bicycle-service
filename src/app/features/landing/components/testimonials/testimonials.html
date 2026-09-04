@@ -1,0 +1,36 @@
+<section class="testimonials">
+  <div class="testimonial-container">
+    <div class="testimonial-heading">
+      <p class="section-eyebrow">RIDER STORIES</p>
+
+      <h2>
+        Loved by
+        <span>riders.</span>
+      </h2>
+    </div>
+
+    <div class="testimonial-list">
+      @for (testimonial of testimonials; track testimonial.name) {
+        <article class="testimonial">
+          <div class="quote-mark">“</div>
+
+          <div class="testimonial-content">
+            <p class="quote">
+              {{ testimonial.quote }}
+            </p>
+
+            <div class="person">
+              <strong>
+                {{ testimonial.name }}
+              </strong>
+
+              <span>
+                {{ testimonial.role }}
+              </span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

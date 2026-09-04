@@ -1,0 +1,84 @@
+<div class="flex flex-col gap-2">
+  <label [for]="label()" [class.p-error]="hasError()" class="font-semibold">{{
+    computdLabel()
+  }}</label>
+  @if (type() === 'int') {
+    <input
+      pInputText
+      pKeyFilter="int"
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  } @else if (type() === 'number') {
+    <input
+      pInputText
+      pKeyFilter="num"
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  } @else if (type() === 'money') {
+    <input
+      pInputText
+      pKeyFilter="money"
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  } @else if (type() === 'alpha') {
+    <input
+      pInputText
+      pKeyFilter="alpha"
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  } @else if (type() === 'alphanum') {
+    <input
+      pInputText
+      pKeyFilter="alphanum"
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  } @else {
+    <input
+      pInputText
+      [id]="label()"
+      [class.ng-invalid]="hasError()"
+      [class.ng-dirty]="hasError()"
+      [formControl]="ngControl.control"
+      [autocomplete]="label()"
+      (blur)="onBlur()"
+      fluid
+    />
+  }
+  @if (hasError()) {
+    <div class="p-error">
+      @for (error of getErrors(); track error) {
+        <small>{{ error }}</small> <br />
+      }
+    </div>
+  }
+</div>
