@@ -1,1 +1,247 @@
-<p>appointment works!</p>
+<main class="appointment-page">
+  <!-- SUCCESS NOTIFICATION -->
+  @if (showNotification) {
+    <div class="booking-notification">
+      <div class="notification-icon">
+        <i class="pi pi-check"></i>
+      </div>
+
+      <div class="notification-content">
+        <strong>Appointment Booked!</strong>
+
+        <span> Your service appointment has been successfully booked. </span>
+      </div>
+
+      <button type="button" class="notification-close" (click)="closeNotification()">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+  }
+  <section class="appointment-header">
+    <div>
+      <span class="eyebrow">BIKE SERVICE</span>
+
+      <h1>
+        Book your
+        <span>service.</span>
+      </h1>
+
+      <p>
+        Keep your ride in perfect condition. Choose your bike, service and preferred appointment
+        time.
+      </p>
+    </div>
+
+    <div class="header-badge">
+      <i class="pi pi-calendar"></i>
+      <span>Easy Booking</span>
+    </div>
+  </section>
+
+  <section class="booking-layout">
+    <div class="booking-card">
+      <div class="card-heading">
+        <div>
+          <span>01</span>
+          <h2>Your Details</h2>
+        </div>
+
+        <i class="pi pi-user"></i>
+      </div>
+
+      <form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+
+          <div class="input-wrapper">
+            <i class="pi pi-user"></i>
+
+            <input id="name" type="text" formControlName="name" placeholder="Enter your name" />
+          </div>
+
+          @if (appointmentForm.get('name')?.touched && appointmentForm.get('name')?.invalid) {
+            <small class="error"> Please enter your name. </small>
+          }
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+
+          <div class="input-wrapper">
+            <i class="pi pi-phone"></i>
+
+            <input
+              id="phoneNumber"
+              type="tel"
+              formControlName="phoneNumber"
+              placeholder="Enter your phone number"
+              maxlength="10"
+            />
+          </div>
+
+          @if (
+            appointmentForm.get('phoneNumber')?.touched &&
+            appointmentForm.get('phoneNumber')?.invalid
+          ) {
+            <small class="error"> Please enter a valid phone number. </small>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+
+          <div class="input-wrapper">
+            <i class="pi pi-envelope"></i>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          @if (appointmentForm.get('email')?.touched && appointmentForm.get('email')?.invalid) {
+            <small class="error"> Please enter a valid email address. </small>
+          }
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="address">Address</label>
+            <span>Optional</span>
+          </div>
+
+          <div class="textarea-wrapper">
+            <i class="pi pi-map-marker"></i>
+
+            <textarea
+              id="address"
+              rows="4"
+              formControlName="address"
+              placeholder="Enter your address"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="book-button"
+          [disabled]="appointmentForm.invalid || isSubmitting"
+        >
+          @if (!isSubmitting) {
+            <span>Submit Details</span>
+          }
+
+          @if (isSubmitting) {
+            <span>Submitting...</span>
+          }
+
+          @if (!isSubmitting) {
+            <i class="pi pi-arrow-right"></i>
+          }
+        </button>
+      </form>
+    </div>
+
+    <!-- SIDE SECTION -->
+    <aside class="booking-side">
+      <div class="orange-card">
+        <span class="side-label"> YOUR RIDE DESERVES IT </span>
+
+        <h2>
+          Ride more.
+          <br />
+          <span>Worry less.</span>
+        </h2>
+
+        <p>Professional bicycle servicing from people who understand every part of your ride.</p>
+
+        <div class="orange-line"></div>
+
+        <div class="benefits">
+          <div>
+            <i class="pi pi-check-circle"></i>
+            <span>Professional service</span>
+          </div>
+
+          <div>
+            <i class="pi pi-check-circle"></i>
+            <span>Experienced mechanics</span>
+          </div>
+
+          <div>
+            <i class="pi pi-check-circle"></i>
+            <span>Service status tracking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER SUMMARY -->
+      <div class="summary-card">
+        <div class="summary-top">
+          <span>YOUR DETAILS</span>
+          <i class="pi pi-user"></i>
+        </div>
+
+        <div class="summary-bike">
+          <i class="pi pi-user"></i>
+
+          <div>
+            <span>Name</span>
+
+            <strong>
+              {{ appointmentForm.get('name')?.value || 'Not entered' }}
+            </strong>
+          </div>
+        </div>
+
+        <div class="summary-details">
+          <div>
+            <span>Phone</span>
+
+            <strong>
+              {{ appointmentForm.get('phoneNumber')?.value || 'Not entered' }}
+            </strong>
+          </div>
+
+          <div>
+            <span>Email</span>
+
+            <strong>
+              {{ appointmentForm.get('email')?.value || 'Not entered' }}
+            </strong>
+          </div>
+
+          <div>
+            <span>Address</span>
+
+            <strong>
+              {{ appointmentForm.get('address')?.value || 'Not provided' }}
+            </strong>
+          </div>
+        </div>
+
+        <div class="summary-footer">
+          <span>Ready to continue?</span>
+          <i class="pi pi-arrow-down"></i>
+        </div>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<!-- <h1>Appointment Test</h1>
+
+<form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
+  <label> Cycle ID </label>
+
+  <input type="text" formControlName="CycleId" />
+
+  <button type="submit">Submit</button>
+</form> -->

@@ -15,7 +15,22 @@ export class Inage {
       return;
     }
 
+    const width = window.innerWidth;
+
+    let speed: string;
+
+    if (width <= 480) {
+      // Mobile
+      speed = `scaleX(1.5) scaleY(2.5) translateX(-30%) translateY(calc(10% + ${window.scrollY * 0.05}%))`;
+    } else if (width <= 768) {
+      // Tablet
+      speed = `scaleX(1.5) scaleY(2.5) translateX(-30%) translateY(calc(10% + ${window.scrollY * 0.05}%))`;
+    } else {
+      // Desktop
+      speed = `scaleX(1.5) scaleY(1.5) translateX(-30%) translateY(calc(10% + ${window.scrollY * 0.05}%))`;
+    }
+
     const scrollY = window.scrollY;
-    bike.style.transform = `scaleX(1.5) scaleY(1.5) translateX(-30%) translateY(calc(10% + ${window.scrollY * 0.07}%))`;
+    bike.style.transform = speed;
   }
 }

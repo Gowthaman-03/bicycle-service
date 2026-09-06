@@ -16,7 +16,7 @@ import { Inage } from './components/inage/inage';
   selector: 'app-landing',
   standalone: true,
 
-  imports: [Navbar, Hero, About, Services, WhyUs, Gallery, Testimonials, BookingCta, Footer, Inage],
+  imports: [About, Services, WhyUs, BookingCta, Inage],
 
   templateUrl: './landing.html',
   styleUrl: './landing.scss',

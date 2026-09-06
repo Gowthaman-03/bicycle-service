@@ -447,6 +447,9 @@
   .hero h1 {
     font-size: clamp(4rem, 13vw, 7rem);
   }
+  .hero-image {
+    transform: scaleX(1.5) scaleY(2.5) translateX(-30%) translateY(10%);
+  }
 }
 
 /* MOBILE */
@@ -503,5 +506,8 @@
 
   .hero-scroll {
     display: none;
+  }
+  .hero-image {
+    transform: scaleX(1.5) scaleY(2.5) translateX(-30%) translateY(10%);
   }
 }

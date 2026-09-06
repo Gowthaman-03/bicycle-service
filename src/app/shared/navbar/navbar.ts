@@ -1,13 +1,13 @@
+import { Drawer } from 'primeng/drawer';
 import { Component, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DrawerModule } from 'primeng/drawer';
-import { ButtonModule } from 'primeng/button';
+import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
 
-  imports: [RouterLink, DrawerModule, ButtonModule],
+  imports: [RouterLink, Drawer, Button],
 
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
@@ -20,6 +20,10 @@ export class Navbar {
     this.isScrolled = window.scrollY > 600;
   }
   mobileMenuVisible = false;
+
+  toggleMobileMenu() {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
+  }
 
   closeMenu() {
     this.mobileMenuVisible = false;

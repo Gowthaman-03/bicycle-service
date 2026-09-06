@@ -1,1 +1,189 @@
-<p>login works!</p>
+<div class="auth-page">
+  <!-- Header -->
+  <!-- <header class="auth-header">
+    <div class="logo">Bi<span>k</span>e</div>
+
+    <a routerLink="/" class="back-home">
+      <i class="pi pi-arrow-left"></i>
+
+      Back to website
+    </a>
+  </header> -->
+  <header class="auth-header">
+    <!-- <app-navbar /> -->
+  </header>
+
+  <!-- Main -->
+  <main class="auth-main">
+    <!-- LEFT IMAGE SECTION -->
+    <section class="image-section">
+      <div class="image-overlay"></div>
+
+      <div class="image-content">
+        <div class="image-tag">RIDE BEYOND LIMITS</div>
+
+        <h1>
+          Your journey<br />
+          <span>starts here.</span>
+        </h1>
+
+        <p>
+          Discover the freedom of cycling. Ride further, explore more and enjoy every moment on two
+          wheels.
+        </p>
+
+        <!-- Features -->
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="pi pi-bolt"></i>
+            </div>
+
+            <div>
+              <strong>Fast Service</strong>
+
+              <span> Quick and reliable support </span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="pi pi-check-circle"></i>
+            </div>
+
+            <div>
+              <strong>Quality Bikes</strong>
+
+              <span> Built for every adventure </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom label -->
+      <div class="image-bottom">
+        <span>BIKE</span>
+
+        <span class="line"></span>
+
+        <span>EST. 2024</span>
+      </div>
+    </section>
+
+    <!-- RIGHT LOGIN SECTION -->
+    <section class="login-section">
+      <div class="login-card">
+        <!-- Header -->
+        <div class="login-header">
+          <span class="login-label"> WELCOME BACK </span>
+
+          <h2>Sign in to your account</h2>
+
+          <!-- <p>Enter your details to continue your journey.</p> -->
+        </div>
+
+        <!-- Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">
+          <!-- Email -->
+          <div class="form-field">
+            <label for="useremail"> Email address </label>
+
+            <div class="input-container">
+              <i class="pi pi-envelope"></i>
+
+              <input
+                id="useremail"
+                type="useremail"
+                pInputText
+                formControlName="useremail"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <!-- @if (useremail?.invalid && useremail?.touched) {
+              <small class="error">
+                @if (useremail?.errors?.['required']) {
+                  Email is required.
+                }
+
+                @if (useremail?.errors?.['email']) {
+                  Please enter a valid email.
+                }
+              </small>
+            } -->
+          </div>
+
+          <!-- Password -->
+          <div class="form-field">
+            <div class="password-label">
+              <label for="password"> Password </label>
+
+              <a href="#"> Forgot password? </a>
+            </div>
+            <div class="input-container">
+              <i class="pi pi-lock"></i>
+
+              <p-password
+                inputId="password"
+                formControlName="password"
+                placeholder="Enter your password"
+                [toggleMask]="true"
+                [feedback]="false"
+                styleClass="password-input"
+              />
+            </div>
+
+            <!-- @if (password?.invalid && password?.touched) {
+              <small class="error">
+                @if (password?.errors?.['required']) {
+                  Password is required.
+                }
+
+                @if (password?.errors?.['minlength']) {
+                  Password must contain at least 6 characters.
+                }
+              </small>
+            } -->
+          </div>
+
+          <!-- Remember -->
+          <!-- <div class="remember-row">
+            <div class="remember">
+              <p-checkbox inputId="remember" formControlName="rememberMe" [binary]="true" />
+
+              <label for="remember"> Remember me </label>
+            </div>
+          </div> -->
+
+          <!-- Login button -->
+          <button pButton type="submit" class="login-button">
+            <span> Sign In </span>
+
+            <i class="pi pi-arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- Register -->
+        <div class="register-section">
+          <span> Don't have an account? </span>
+
+          <a routerLink="/register"> Create account </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <!-- Social login -->
+        <div class="social-login">
+          <button type="button" class="social-button">
+            <i class="pi pi-google"></i>
+
+            Continue with Google
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

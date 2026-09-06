@@ -1,0 +1,11 @@
+.hero-blue-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  //   background:
+  //     radial-gradient(circle at 75% 45%, rgba(1, 22, 51, 0.45), transparent 40%),
+  //     linear-gradient(135deg, #01173c 0%, #021a3c 50%, #102c49 100%);
+  background-image: url('/assets/images/herobg.png');
+  background-size: cover;
+  background-position: center;
+}

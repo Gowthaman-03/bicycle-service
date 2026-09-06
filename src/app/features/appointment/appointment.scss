@@ -1,0 +1,915 @@
+:host {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.appointment-page {
+  height: 180vh;
+  background: #f5f5f3;
+  margin: 90px 0 0 0;
+  color: #171717;
+  z-index: 1;
+  position: relative;
+  // overflow: scroll;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.appointment-header {
+  max-width: 1400px;
+  margin: 0 auto 55px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  color: #f0440b;
+
+  margin-bottom: 14px;
+}
+
+.appointment-header h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.appointment-header h1 span {
+  color: #f0440b;
+}
+
+.appointment-header p {
+  max-width: 600px;
+
+  margin: 25px 0 0;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  color: #626262;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #fff;
+
+  padding: 16px 22px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.header-badge i {
+  color: #f0440b;
+  font-size: 20px;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+
+.booking-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(360px, 0.8fr);
+
+  gap: 35px;
+}
+
+/* ================================
+   FORM CARD
+================================ */
+
+.booking-card {
+  background: #fff;
+
+  padding: 42px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 38px;
+}
+
+.card-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.card-heading span {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f0440b;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.card-heading h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.card-heading > i {
+  font-size: 26px;
+  color: #f0440b;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+  margin-bottom: 27px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.input-wrapper,
+.textarea-wrapper {
+  position: relative;
+}
+
+.input-wrapper > i:first-child,
+.textarea-wrapper > i {
+  position: absolute;
+
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #777;
+
+  z-index: 1;
+}
+
+.input-wrapper select,
+.input-wrapper input,
+.textarea-wrapper textarea {
+  width: 100%;
+
+  border: 1.5px solid #e3e3e3;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  color: #171717;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  transition: all 0.2s ease;
+}
+
+.input-wrapper select,
+.input-wrapper input {
+  height: 55px;
+
+  padding: 0 48px;
+}
+
+.textarea-wrapper textarea {
+  padding: 17px 20px 17px 48px;
+
+  resize: vertical;
+
+  min-height: 120px;
+}
+
+.input-wrapper select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  position: absolute;
+
+  right: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #555;
+}
+
+.input-wrapper select:focus,
+.input-wrapper input:focus,
+.textarea-wrapper textarea:focus {
+  outline: none;
+
+  border-color: #f0440b;
+
+  background: #fff;
+
+  box-shadow: 0 0 0 3px rgba(240, 68, 11, 0.08);
+}
+
+.error {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #dc2626;
+
+  font-size: 12px;
+}
+
+/* ================================
+   SERVICE OPTIONS
+================================ */
+
+.service-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.service-option {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  min-height: 76px;
+
+  padding: 14px;
+
+  border: 1.5px solid #e4e4e4;
+
+  border-radius: 9px;
+
+  background: #fafafa;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-option:hover {
+  border-color: #f0440b;
+
+  transform: translateY(-2px);
+}
+
+.service-option.active {
+  border-color: #f0440b;
+
+  background: #fff2ed;
+}
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #171717;
+
+  color: #fff;
+
+  font-size: 17px;
+}
+
+.service-option.active .service-icon {
+  background: #f0440b;
+}
+
+.service-option strong {
+  display: block;
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.service-option span {
+  display: block;
+
+  font-size: 11px;
+
+  color: #777;
+}
+
+.check-icon {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  color: #f0440b;
+
+  font-size: 13px;
+}
+
+/* ================================
+   DATE / TIME
+================================ */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+/* ================================
+   NOTES
+================================ */
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-row span {
+  color: #999;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.book-button {
+  width: 100%;
+
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f0440b;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.book-button:hover:not(:disabled) {
+  background: #d93606;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(240, 68, 11, 0.25);
+}
+
+.book-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.booking-side {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+/* ================================
+   ORANGE CARD
+================================ */
+
+.orange-card {
+  min-height: 390px;
+
+  padding: 40px;
+
+  border-radius: 12px;
+
+  background: #f0440b;
+
+  color: #171717;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.orange-card::after {
+  content: '';
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -80px;
+  bottom: -100px;
+
+  border: 45px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+}
+
+.side-label {
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.orange-card h2 {
+  margin: 30px 0 20px;
+
+  font-size: 42px;
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+}
+
+.orange-card h2 span {
+  color: #fff;
+}
+
+.orange-card p {
+  max-width: 400px;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+.orange-line {
+  height: 1px;
+
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 22px;
+}
+
+.benefits {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.benefits div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.benefits i {
+  font-size: 15px;
+}
+
+/* ================================
+   SUMMARY CARD
+================================ */
+
+.summary-card {
+  background: #1b1b1b;
+
+  color: #fff;
+
+  border-radius: 12px;
+
+  padding: 32px;
+}
+
+.summary-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.summary-top span {
+  color: #aaa;
+
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: 800;
+}
+
+.summary-top i {
+  color: #f0440b;
+
+  font-size: 22px;
+}
+
+.summary-bike {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #363636;
+}
+
+.summary-bike > i {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #f0440b;
+
+  color: #fff;
+
+  font-size: 22px;
+}
+
+.summary-bike span {
+  display: block;
+
+  color: #999;
+
+  font-size: 11px;
+
+  margin-bottom: 5px;
+}
+
+.summary-bike strong {
+  display: block;
+
+  font-size: 17px;
+}
+
+.summary-details {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+
+  padding: 25px 0;
+}
+
+.summary-details div:last-child {
+  grid-column: span 2;
+}
+
+.summary-details span {
+  display: block;
+
+  color: #888;
+
+  font-size: 11px;
+
+  margin-bottom: 7px;
+}
+
+.summary-details strong {
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.summary-footer {
+  padding-top: 20px;
+
+  border-top: 1px solid #363636;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #f0440b;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+  .appointment-page {
+    padding: 50px 5%;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-side {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment-page {
+    padding: 35px 20px;
+  }
+
+  .appointment-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 35px;
+  }
+
+  .appointment-header h1 {
+    font-size: 52px;
+
+    letter-spacing: -2px;
+  }
+
+  .booking-card {
+    padding: 25px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .booking-side {
+    display: flex;
+  }
+
+  .orange-card {
+    padding: 30px;
+  }
+
+  .orange-card h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-header h1 {
+    font-size: 42px;
+  }
+
+  .booking-card {
+    padding: 20px;
+  }
+
+  .card-heading h2 {
+    font-size: 22px;
+  }
+
+  .summary-card {
+    padding: 25px;
+  }
+}
+.booking-notification {
+  position: fixed;
+
+  top: 28px;
+  right: 28px;
+
+  z-index: 9999;
+
+  width: min(420px, calc(100vw - 40px));
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 18px 18px 20px;
+
+  background: #1b1b1b;
+
+  color: #fff;
+
+  border-left: 5px solid #f0440b;
+
+  border-radius: 10px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+
+  animation: notification-slide-in 0.35s ease-out;
+}
+
+/* ICON */
+
+.notification-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f0440b;
+
+  color: #fff;
+
+  font-size: 17px;
+}
+
+/* CONTENT */
+
+.notification-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.notification-content strong {
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.notification-content span {
+  color: #aaa;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+/* CLOSE */
+
+.notification-close {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.notification-close:hover {
+  color: #fff;
+
+  background: #333;
+}
+
+/* ANIMATION */
+
+@keyframes notification-slide-in {
+  from {
+    opacity: 0;
+
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .booking-notification {
+    top: 18px;
+    right: 20px;
+    left: 20px;
+
+    width: auto;
+  }
+}

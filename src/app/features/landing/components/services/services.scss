@@ -142,6 +142,56 @@
   letter-spacing: 0.1em;
 }
 
+.services-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.service-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 52px;
+
+  padding: 0 26px;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.service-btn {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+
+  padding: 16px 32px;
+
+  transition: 0.3s ease;
+}
+
+.service-btn:hover {
+  border-color: var(--orange);
+
+  color: var(--orange);
+}
+
 @media (max-width: 800px) {
   .services {
     padding: 80px 0;

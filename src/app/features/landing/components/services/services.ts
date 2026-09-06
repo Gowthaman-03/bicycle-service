@@ -19,29 +19,32 @@ export class Services {
     {
       icon: 'pi pi-wrench',
       number: '01',
-      title: 'Bike Repair',
-      description: 'Professional repairs for brakes, gears, wheels and more.',
+      title: 'General Bicycle Service',
+      description:
+        'Complete inspection, brake adjustment, gear tuning and drivetrain maintenance for everyday riders.',
     },
 
     {
       icon: 'pi pi-cog',
       number: '02',
-      title: 'Full Tune-Up',
-      description: 'Complete inspection and adjustment to restore your bike.',
-    },
-
-    {
-      icon: 'pi pi-sync',
-      number: '03',
-      title: 'Bike Service',
-      description: 'Regular maintenance designed to keep your ride reliable.',
+      title: 'Premium Complete Service',
+      description:
+        'A deep professional service including drivetrain cleaning, wheel truing, lubrication and a full inspection.',
     },
 
     {
       icon: 'pi pi-bolt',
+      number: '03',
+      title: 'Performance & Race Service',
+      description: 'Race-focused setup and inspection for MTB, road and performance bicycles.',
+    },
+
+    {
+      icon: 'pi pi-sync',
       number: '04',
-      title: 'Performance',
-      description: 'Fine tuning and performance setup for serious riders.',
+      title: 'Suspension Service',
+      description:
+        'Professional suspension inspection, setup and maintenance for forks and rear shocks.',
     },
   ];
 }

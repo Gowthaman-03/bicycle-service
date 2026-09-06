@@ -1,0 +1,137 @@
+<section class="service-grid">
+  <section class="services-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="eyebrow"> PROFESSIONAL BICYCLE CARE </span>
+
+      <h1>
+        Every Ride Deserves
+        <span>Expert Care.</span>
+      </h1>
+
+      <p>
+        From routine maintenance to professional race preparation, we provide complete bicycle
+        servicing for every rider.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED SERVICES -->
+
+  <section class="featured-section">
+    <div class="section-heading">
+      <span>OUR EXPERTISE</span>
+
+      <h2>Featured Services</h2>
+
+      <p>Professional services designed to keep your bicycle performing at its best.</p>
+    </div>
+
+    <div class="featured-grid">
+      <div
+        class="featured-card"
+        *ngFor="let service of services"
+        [class.hidden]="!service.featured"
+      >
+        <div class="service-number">
+          {{ service.number }}
+        </div>
+
+        <i [class]="service.icon" class="service-icon"></i>
+
+        <h3>
+          {{ service.title }}
+        </h3>
+
+        <p>
+          {{ service.description }}
+        </p>
+
+        <button class="service-link">
+          Explore Service
+          <i class="pi pi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL SERVICES -->
+
+  <section class="all-services">
+    <div class="section-heading">
+      <span>COMPLETE SERVICE MENU</span>
+
+      <h2>Explore All Services</h2>
+
+      <p>Select a category to find the right service for your bicycle.</p>
+    </div>
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="service-filters">
+      <button
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- SERVICES GRID -->
+
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let service of filteredServices">
+        <div class="card-top">
+          <span class="service-number">
+            {{ service.number }}
+          </span>
+
+          <i [class]="service.icon" class="service-icon"></i>
+        </div>
+
+        <div class="service-category">
+          {{ service.category }}
+        </div>
+
+        <h3>
+          {{ service.title }}
+        </h3>
+
+        <p>
+          {{ service.description }}
+        </p>
+
+        <div class="card-footer">
+          <button>
+            View Details
+            <i class="pi pi-arrow-up-right"></i>
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <section class="services-cta">
+    <div class="cta-content">
+      <span>READY TO RIDE?</span>
+
+      <h2>
+        Give Your Bicycle
+        <br />
+        The Care It Deserves.
+      </h2>
+
+      <p>Book your professional bicycle service today.</p>
+
+      <a routerLink="/appointment" class="book-btn">
+        Book a Service
+
+        <i class="pi pi-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+</section>
