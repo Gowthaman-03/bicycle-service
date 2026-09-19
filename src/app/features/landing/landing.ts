@@ -6,6 +6,7 @@ import { About } from './components/about/about';
 import { WhyUs } from './components/why-us/why-us';
 import { Gallery } from './components/gallery/gallery';
 import { BookingCta } from './components/booking-cta/booking-cta';
+import { Inage } from './components/inage/inage';
 
 @Component({
   selector: 'app-landing',
@@ -18,8 +19,9 @@ import { BookingCta } from './components/booking-cta/booking-cta';
     WhyUs,
     Gallery,
     BookingCta,
+    Inage
   ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',
 })
-export class Landing {}
+export class Landing { }

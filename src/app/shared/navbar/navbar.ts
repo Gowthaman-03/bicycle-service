@@ -17,7 +17,7 @@ export class Navbar {
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    this.isScrolled = window.scrollY > 50;
+    this.isScrolled = window.scrollY > 600;
   }
   mobileMenuVisible = false;
 

@@ -3,32 +3,30 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  z-index: 1000;
-  background: rgba(5, 5, 5, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  height: 90px;
+  z-index: 9999;
+  background: transparent;
+  // background: rgba(255, 255, 255, 0.322);
+  transition:
+    background-color 0.4s ease,
+    backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .navbar.navbar-scrolled {
-  height: 72px;
-  background: rgba(5, 5, 5, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-inner {
   height: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
+  width: 96%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--container-padding);
+  padding: 0 30px;
 }
 
 .logo {
