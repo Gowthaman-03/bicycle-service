@@ -1,121 +1,88 @@
-.booking-cta {
+.booking-cta-section {
+  background-color: var(--bg-main);
+  padding: var(--space-4xl) 0;
+}
+
+.booking-cta-banner {
+  background: linear-gradient(135deg, #121212 0%, #1c140e 50%, #161616 100%);
+  border: 1px solid rgba(255, 106, 0, 0.35);
+  border-radius: 12px;
+  padding: 64px 48px;
   position: relative;
-
-  min-height: 650px;
-
-  display: flex;
-  z-index: 10;
-  align-items: center;
-  // background: rgba(0, 0, 0, 0.68);
-  background: #050505;
-
   overflow: hidden;
-
-  color: #fff;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
-.booking-background {
+.cta-bg-glow {
   position: absolute;
-
-  inset: 0;
-
-  background-image: url('/assets/images/booking-bike.jpg');
-
-  background-size: cover;
-
-  background-position: center;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.25) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.booking-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.68);
-}
-
-.booking-content {
+.cta-content-inner {
   position: relative;
-
   z-index: 2;
-
-  width: min(1200px, calc(100% - 80px));
-
-  margin: auto;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.booking-content h2 {
-  max-width: 1000px;
-
-  margin: 0;
-
-  font-size: clamp(4rem, 8vw, 8rem);
-
-  line-height: 0.85;
-
-  letter-spacing: -0.06em;
-
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   text-transform: uppercase;
+  line-height: 0.95;
+  color: #ffffff;
+  margin-bottom: 20px;
+
+  span {
+    color: var(--primary);
+  }
 }
 
-.booking-content h2 span {
-  display: block;
-
-  color: transparent;
-
-  -webkit-text-stroke: 1px #fff;
+.cta-description {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 36px;
 }
 
-.booking-content > p:not(.section-eyebrow) {
-  max-width: 500px;
-
-  margin: 35px 0;
-
-  color: #ccc;
-
-  line-height: 1.7;
-}
-
-.booking-button {
-  display: inline-flex;
-
+.cta-button-group {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 
-  gap: 15px;
-
-  padding: 17px 28px;
-
-  background: #fff;
-
-  color: #111;
-
-  text-decoration: none;
-
-  text-transform: uppercase;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-
-  transition: transform 0.25s ease;
-}
-
-.booking-button:hover {
-  transform: translateY(-3px);
-}
-
-@media (max-width: 700px) {
-  .booking-cta {
-    min-height: 600px;
+  .cta-btn {
+    padding: 16px 36px;
+    font-size: 15px;
   }
 
-  .booking-content {
-    width: calc(100% - 30px);
+  .cta-call-btn {
+    padding: 16px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .booking-cta-banner {
+    padding: 40px 24px;
   }
 
-  .booking-content h2 {
-    font-size: clamp(3.3rem, 16vw, 5rem);
+  .cta-button-group {
+    flex-direction: column;
+    align-items: stretch;
+
+    .cta-btn, .cta-call-btn {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

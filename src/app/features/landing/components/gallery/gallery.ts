@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-interface GalleryImage {
+interface GalleryItem {
   image: string;
   alt: string;
+  tag: string;
+  title: string;
 }
 
 @Component({
@@ -12,35 +14,42 @@ interface GalleryImage {
   styleUrl: './gallery.scss',
 })
 export class Gallery {
-  images: GalleryImage[] = [
+  items: GalleryItem[] = [
     {
-      image: 'assets/images/gallery-01.jpg',
-      alt: 'Bicycle workshop',
+      image: 'assets/images/about-bike.jpeg',
+      alt: 'Mechanic performing precision drivetrain service',
+      tag: 'Workshop',
+      title: 'Precision Drivetrain Tuning',
     },
-
     {
-      image: 'assets/images/gallery-02.jpg',
-      alt: 'Bicycle mechanic',
+      image: 'assets/images/hero-bike1.jpeg',
+      alt: 'Mountain bike suspension setup and testing',
+      tag: 'Performance',
+      title: 'Suspension & Damper Service',
     },
-
     {
-      image: 'assets/images/gallery-03.jpg',
-      alt: 'Road bicycle',
+      image: 'assets/images/Bikes.jpg',
+      alt: 'Bicycle fleet safety inspection lineup',
+      tag: 'Inspection',
+      title: 'Complete Safety Inspection',
     },
-
     {
-      image: 'assets/images/gallery-04.jpg',
-      alt: 'Bicycle repair',
+      image: 'assets/images/hero-bike-bg.jpeg',
+      alt: 'Road bicycle race tune and calibration',
+      tag: 'Road / Race',
+      title: 'Race-Ready Road Setup',
     },
-
     {
-      image: 'assets/images/gallery-05.jpg',
-      alt: 'Mountain bicycle',
+      image: 'assets/images/bike.png',
+      alt: 'Custom component overhaul and wheel truing',
+      tag: 'Assembly',
+      title: 'Precision Component Assembly',
     },
-
     {
-      image: 'assets/images/gallery-06.jpg',
-      alt: 'Bicycle components',
+      image: 'assets/images/herobg.png',
+      alt: 'Bicycle road testing after complete overhaul',
+      tag: 'Road Test',
+      title: 'Dynamic Ride Testing',
     },
   ];
 }

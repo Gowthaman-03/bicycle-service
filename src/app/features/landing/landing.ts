@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
-
-import { Navbar } from '../../shared/navbar/navbar';
-import { Footer } from '../../shared/footer/footer';
-
 import { Hero } from './components/hero/hero';
-import { About } from './components/about/about';
 import { Services } from './components/services/services';
+import { HowItWorks } from './components/how-it-works/how-it-works';
+import { About } from './components/about/about';
 import { WhyUs } from './components/why-us/why-us';
 import { Gallery } from './components/gallery/gallery';
-import { Testimonials } from './components/testimonials/testimonials';
 import { BookingCta } from './components/booking-cta/booking-cta';
-import { Inage } from './components/inage/inage';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-
-  imports: [About, Services, WhyUs, BookingCta, Inage],
-
+  imports: [
+    Hero,
+    Services,
+    HowItWorks,
+    About,
+    WhyUs,
+    Gallery,
+    BookingCta,
+  ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',
 })

@@ -9,7 +9,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
 import { loginColumn } from './login.column';
 import { AuthService } from '../auth.service';
-import { Navbar } from '../../../shared/navbar/navbar';
+
 @Component({
   selector: 'app-login',
   imports: [
@@ -19,7 +19,6 @@ import { Navbar } from '../../../shared/navbar/navbar';
     PasswordModule,
     ButtonModule,
     CheckboxModule,
-    Navbar,
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',

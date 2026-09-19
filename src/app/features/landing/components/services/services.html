@@ -1,49 +1,73 @@
-<section id="services" class="services section">
-  <div class="services-header">
-    <div>
-      <p class="section-eyebrow">WHAT WE DO</p>
-
-      <h2>
-        Our
-        <span>Services</span>
-      </h2>
+<section id="services" class="section services-section" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="services-header">
+      <div class="services-title-area">
+        <p class="section-eyebrow">WHAT WE DO</p>
+        <h2 id="services-heading" class="section-title">
+          Precision <span>Services</span>
+        </h2>
+      </div>
+      <p class="section-subtitle">
+        From routine safety tune-ups to complete race overhauls, our workshop delivers factory-standard care with transparent pricing and certified tools.
+      </p>
     </div>
 
-    <p class="services-intro">
-      From small adjustments to complete servicing, we've got your bicycle covered.
-    </p>
-  </div>
+    <div class="services-grid">
+      @for (service of services; track service.number) {
+        <article class="service-card" [class.popular]="service.popular">
+          @if (service.popular) {
+            <div class="popular-badge">
+              <i class="pi pi-star-fill"></i>
+              <span>Most Popular</span>
+            </div>
+          }
 
-  <div class="services-grid">
-    @for (service of services; track service.number) {
-      <article class="service-card">
-        <div class="service-top">
-          <span class="service-number">
-            {{ service.number }}
-          </span>
+          <div class="card-top">
+            <span class="service-number">{{ service.number }}</span>
+            <div class="service-icon-wrap">
+              <i [class]="service.icon"></i>
+            </div>
+          </div>
 
-          <i [class]="service.icon"></i>
+          <div class="card-body">
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-desc">{{ service.description }}</p>
+
+            <div class="features-list-wrap">
+              <span class="features-heading">Included in service:</span>
+              <ul class="features-list">
+                @for (item of service.features; track item) {
+                  <li>
+                    <i class="pi pi-check"></i>
+                    <span>{{ item }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a routerLink="/appointment" class="btn-primary service-card-btn">
+              <span>Book Service</span>
+              <i class="pi pi-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <!-- Bottom Explore All CTA -->
+    <div class="services-bottom-cta">
+      <div class="cta-inner-box">
+        <div class="cta-text">
+          <h3>Need a custom repair or diagnostic?</h3>
+          <p>We offer 20+ specialized bicycle services including bike fitting, custom wheel building, and e-bike diagnostics.</p>
         </div>
-
-        <div class="service-content">
-          <h3>
-            {{ service.title }}
-          </h3>
-
-          <p>
-            {{ service.description }}
-          </p>
-        </div>
-
-        <a routerLink="/appointment" class="service-link">
-          Book
-
-          <i class="pi pi-arrow-up-right"></i>
+        <a routerLink="/service" class="btn-secondary">
+          <span>Explore All 20+ Services</span>
+          <i class="pi pi-arrow-right"></i>
         </a>
-      </article>
-    }
-  </div>
-  <div class="services-footer">
-    <a href="/service" class="service-btn"> Explore Services </a>
+      </div>
+    </div>
   </div>
 </section>

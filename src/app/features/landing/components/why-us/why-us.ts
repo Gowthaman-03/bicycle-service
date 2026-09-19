@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-interface Feature {
+interface TrustBenefit {
   number: string;
+  icon: string;
   title: string;
   description: string;
 }
@@ -13,28 +14,34 @@ interface Feature {
   styleUrl: './why-us.scss',
 })
 export class WhyUs {
-  features: Feature[] = [
+  benefits: TrustBenefit[] = [
     {
       number: '01',
-      title: 'Experienced Mechanics',
+      icon: 'pi pi-user',
+      title: 'Professional Technicians',
       description:
-        'Our technicians understand bicycles inside and out and treat every bike with care.',
+        'Mechanics with hands-on expertise across modern disc brakes, electronic shifting, and complex suspension architectures.',
     },
     {
       number: '02',
-      title: 'Quality Components',
-      description: 'We use reliable parts and professional tools to make sure every repair lasts.',
+      icon: 'pi pi-verified',
+      title: 'Quality Service & Parts',
+      description:
+        'We strictly use original factory components, high-load synthetic greases, and industry-standard precision tools.',
     },
     {
       number: '03',
-      title: 'Transparent Service',
+      icon: 'pi pi-eye',
+      title: 'Transparent Process',
       description:
-        'Clear service information and straightforward pricing. No unnecessary surprises.',
+        'Upfront price estimates with itemized breakdowns. We only perform and charge for repairs you have approved.',
     },
     {
       number: '04',
-      title: 'Fast Turnaround',
-      description: 'We work efficiently so you can get your bicycle back and get riding again.',
+      icon: 'pi pi-clock',
+      title: 'Reliable Turnaround',
+      description:
+        'Fast scheduling and realistic completion deadlines so you can plan your rides and commute without delays.',
     },
   ];
 }

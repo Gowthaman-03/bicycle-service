@@ -1,34 +1,88 @@
-<section id="about" class="about">
-  <div class="about-container">
-    <div class="about-image">
-      <img src="assets\images\about-bike.jpeg" alt="Bicycle mechanic servicing a bike" />
+<section id="about" class="section about-section" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left Visual / Image Side -->
+      <div class="about-visual">
+        <div class="about-image-card">
+          <img src="assets/images/about-bike.jpeg" alt="Professional bicycle workshop mechanic servicing a bicycle" class="about-img" />
+          <div class="image-gradient-overlay"></div>
+          
+          <div class="image-badge">
+            <span class="badge-accent">EST. 2026</span>
+            <span class="badge-title">Precision Cycle Workshop</span>
+          </div>
 
-      <div class="image-label">EST. 2026</div>
-    </div>
+          <div class="floating-stat-box">
+            <i class="pi pi-shield"></i>
+            <div>
+              <strong>Factory Tools</strong>
+              <span>Park Tool & Shimano Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="about-content">
-      <p class="section-eyebrow">WHO WE ARE</p>
+      <!-- Right Editorial Content Side -->
+      <div class="about-content">
+        <p class="section-eyebrow">BUILT AROUND YOUR RIDE</p>
+        
+        <h2 id="about-heading" class="section-title">
+          Engineering <span>Care</span> for Every Ride
+        </h2>
 
-      <h2>
-        We keep
-        <span>you riding.</span>
-      </h2>
+        <p class="about-lead">
+          Your bicycle is an engineered machine deserving more than a superficial tune-up. Our Salem workshop operates with dedicated tooling, diagnostic precision, and a deep passion for cycling performance.
+        </p>
 
-      <p class="about-lead">
-        Your bicycle deserves more than a quick fix. Our workshop combines professional expertise,
-        quality parts and genuine passion for cycling.
-      </p>
+        <p class="about-text">
+          Whether you depend on a daily commuter, train on a carbon road machine, or ride tough weekend trails, we treat every bike with individual inspection, exact torque specifications, and genuine replacement components.
+        </p>
 
-      <p>
-        From everyday commuters to weekend riders, we provide reliable repairs and maintenance that
-        keep your bicycle performing at its best.
-      </p>
+        <!-- Trust Points Grid -->
+        <div class="about-trust-grid">
+          <div class="trust-point">
+            <div class="point-icon"><i class="pi pi-wrench"></i></div>
+            <div class="point-text">
+              <h4>Professional Service</h4>
+              <p>Experienced mechanics trained in mechanical and electronic drivetrains.</p>
+            </div>
+          </div>
 
-      <a href="#services" class="text-link">
-        Discover our services
+          <div class="trust-point">
+            <div class="point-icon"><i class="pi pi-shield"></i></div>
+            <div class="point-text">
+              <h4>Quality Parts</h4>
+              <p>Only authentic spares, lubricants, and high-performance consumables.</p>
+            </div>
+          </div>
 
-        <i class="pi pi-arrow-right"></i>
-      </a>
+          <div class="trust-point">
+            <div class="point-icon"><i class="pi pi-search"></i></div>
+            <div class="point-text">
+              <h4>Detailed Inspection</h4>
+              <p>Comprehensive pre- and post-service safety diagnostics on all components.</p>
+            </div>
+          </div>
+
+          <div class="trust-point">
+            <div class="point-icon"><i class="pi pi-file-edit"></i></div>
+            <div class="point-text">
+              <h4>Transparent Process</h4>
+              <p>Clear upfront quotes, no hidden costs, and honest turnaround estimates.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a routerLink="/appointment" class="btn-primary">
+            <span>Book a Workshop Visit</span>
+            <i class="pi pi-arrow-right"></i>
+          </a>
+          <a href="#services" class="btn-secondary">
+            <span>View Service Packages</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

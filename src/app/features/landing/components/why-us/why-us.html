@@ -1,39 +1,29 @@
-<section class="why-us">
-  <div class="why-container">
-    <div class="why-header">
-      <p class="section-eyebrow">WHY CHOOSE US</p>
-
-      <h2>
-        Built for
-        <span>riders.</span>
+<section class="section trust-section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="trust-header text-center">
+      <p class="section-eyebrow">OUR COMMITMENT</p>
+      <h2 id="trust-heading" class="section-title">
+        Why Cyclists <span>Trust Us</span>
       </h2>
-
-      <p class="why-intro">
-        Whether you ride every day or only on weekends, we make sure your bicycle is ready for the
-        road.
+      <p class="section-subtitle mx-auto">
+        Built on mechanical integrity, genuine components, and honest communication at every step of your bicycle service.
       </p>
     </div>
 
-    <div class="features">
-      @for (feature of features; track feature.number) {
-        <article class="feature">
-          <div class="feature-number">
-            {{ feature.number }}
+    <div class="benefits-grid">
+      @for (item of benefits; track item.number) {
+        <article class="benefit-card">
+          <div class="card-header-flex">
+            <span class="benefit-number">{{ item.number }}</span>
+            <div class="benefit-icon">
+              <i [class]="item.icon"></i>
+            </div>
           </div>
 
-          <div class="feature-content">
-            <h3>
-              {{ feature.title }}
-            </h3>
+          <h3 class="benefit-title">{{ item.title }}</h3>
+          <p class="benefit-description">{{ item.description }}</p>
 
-            <p>
-              {{ feature.description }}
-            </p>
-          </div>
-
-          <div class="feature-arrow">
-            <i class="pi pi-arrow-up-right"></i>
-          </div>
+          <div class="card-edge-glow"></div>
         </article>
       }
     </div>

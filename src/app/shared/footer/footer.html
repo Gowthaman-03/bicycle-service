@@ -1,51 +1,101 @@
-<footer id="contact" class="footer">
-  <div class="footer-container">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="Cycle Service" />
-
-        <p>Professional bicycle repair, servicing and maintenance.</p>
+<footer id="contact" class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top-grid">
+      <!-- Column 1: Brand & Bio -->
+      <div class="footer-brand-col">
+        <a href="/" class="footer-logo" aria-label="Cycle Service Home">
+          <img src="assets/images/logo.png" alt="Cycle Service" />
+        </a>
+        <p class="footer-bio">
+          Salem’s premier bicycle service center. Combining professional mechanics, authentic spares, and factory tools to keep every ride performing at its peak.
+        </p>
+        <div class="footer-badges">
+          <span class="f-badge"><i class="pi pi-check-circle"></i> Shimano Certified</span>
+          <span class="f-badge"><i class="pi pi-shield"></i> Park Tool Equipped</span>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h3>Explore</h3>
-
-        <a href="#home"> Home </a>
-
-        <a href="#about"> About </a>
-
-        <a href="#services"> Services </a>
-
-        <a href="#gallery"> Gallery </a>
+      <!-- Column 2: Quick Navigation -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Our Workshop</a></li>
+          <li><a href="#services">Service Packages</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#gallery">Workshop Gallery</a></li>
+        </ul>
       </div>
 
-      <div class="footer-column">
-        <h3>Services</h3>
-
-        <a routerLink="/appointment"> Bike Repair </a>
-
-        <a routerLink="/appointment"> Full Tune-Up </a>
-
-        <a routerLink="/appointment"> Bike Service </a>
-
-        <a routerLink="/appointment"> Performance </a>
+      <!-- Column 3: Specialized Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a routerLink="/appointment">General Bike Service</a></li>
+          <li><a routerLink="/appointment">Premium Complete Service</a></li>
+          <li><a routerLink="/appointment">Performance & Race Tune</a></li>
+          <li><a routerLink="/appointment">Suspension Overhaul</a></li>
+          <li><a routerLink="/service">All 20+ Services &rarr;</a></li>
+        </ul>
       </div>
 
-      <div class="footer-column">
-        <h3>Contact</h3>
+      <!-- Column 4: Contact & Workshop Hours -->
+      <div class="footer-col contact-col">
+        <h3 class="footer-heading">Visit & Contact</h3>
+        <div class="contact-info-list">
+          <div class="contact-entry">
+            <i class="pi pi-map-marker"></i>
+            <div>
+              <strong>Workshop Location</strong>
+              <span>Salem, Tamil Nadu, India</span>
+            </div>
+          </div>
 
-        <a href="tel:+919999999999"> +91 99999 99999 </a>
+          <div class="contact-entry">
+            <i class="pi pi-phone"></i>
+            <div>
+              <strong>Direct Line</strong>
+              <a href="tel:+919999999999">+91 99999 99999</a>
+            </div>
+          </div>
 
-        <a href="mailto:hello@cycleservice.com"> hello@cycleservice.com </a>
+          <div class="contact-entry">
+            <i class="pi pi-envelope"></i>
+            <div>
+              <strong>Email Inquiries</strong>
+              <a href="mailto:hello@cycleservice.com">hello@cycleservice.com</a>
+            </div>
+          </div>
 
-        <span> Salem, Tamil Nadu </span>
+          <div class="contact-entry">
+            <i class="pi pi-clock"></i>
+            <div>
+              <strong>Workshop Hours</strong>
+              <span>Mon – Sat: 9:00 AM – 8:00 PM</span>
+              <span class="text-dim">Sunday: 10:00 AM – 4:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-cta-wrap">
+          <a routerLink="/appointment" class="btn-primary footer-book-btn">
+            <span>Book Your Service</span>
+            <i class="pi pi-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span> © 2026 Cycle Service </span>
-
-      <span> Built for riders. </span>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <p class="copyright">
+        &copy; 2026 Cycle Service Center. All rights reserved. Built for riders.
+      </p>
+      <div class="footer-legal-links">
+        <a href="#services">Pricing & Packages</a>
+        <span class="divider">&bull;</span>
+        <a routerLink="/appointment">Online Booking</a>
+      </div>
     </div>
   </div>
 </footer>
