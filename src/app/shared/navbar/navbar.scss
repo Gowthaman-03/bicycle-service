@@ -21,6 +21,7 @@
   z-index: 9999;
 
   background: transparent;
+  // background: rgba(255, 255, 255, 0.322);
 
   transition:
     background-color 0.4s ease,
@@ -88,7 +89,7 @@
 }
 
 .desktop-nav a {
-  color: #fff;
+  color: #c8ff00;
 
   text-decoration: none;
 
@@ -111,7 +112,7 @@
 .desktop-nav .nav-book {
   padding: 13px 22px;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgb(200, 255, 0, 0.7);
 
   transition:
     background 0.25s ease,

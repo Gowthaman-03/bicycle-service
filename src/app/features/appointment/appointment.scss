@@ -7,9 +7,11 @@
 }
 
 .appointment-page {
-  height: 180vh;
+  min-height: 180vh;
+  height: auto;
   background: #f5f5f3;
   margin: 90px 0 0 0;
+  padding: 55px 40px 80px;
   color: #171717;
   z-index: 1;
   position: relative;
@@ -700,83 +702,378 @@
    RESPONSIVE
 ================================ */
 
-@media (max-width: 1100px) {
+/* Tablet + smaller laptops */
+@media (max-width: 1200px) {
   .appointment-page {
-    padding: 50px 5%;
+    padding: 55px 40px 80px;
+    min-height: 100vh;
+    height: auto;
   }
 
   .booking-layout {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .booking-side {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+/* =========================================================
+   TABLET — 769px to 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .appointment-page {
+    padding: 55px 40px 80px;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  /* Header */
+  .appointment-header {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .appointment-header h1 {
+    font-size: 58px;
+    line-height: 0.95;
+  }
+
+  .appointment-header p {
+    max-width: 650px;
+    font-size: 15px;
+  }
+
+  /* Main layout */
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Booking card */
+  .booking-card {
+    width: 100%;
+    padding: 32px;
+  }
+
+  /* Side section */
+  .booking-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .orange-card,
+  .summary-card {
+    width: 100%;
+  }
+
+  .orange-card {
+    padding: 32px;
+  }
+
+  .orange-card h2 {
+    font-size: 40px;
+  }
+
+  .summary-card {
+    padding: 30px;
   }
 }
 
+/* =========================================================
+   MOBILE — 768px and below
+   ========================================================= */
+
 @media (max-width: 768px) {
   .appointment-page {
-    padding: 35px 20px;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 35px 20px 60px;
+
+    overflow-x: hidden;
   }
 
-  .appointment-header {
-    flex-direction: column;
+  /* -------------------------------------------------------
+     HEADER
+     ------------------------------------------------------- */
 
+  .appointment-header {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
 
+    gap: 20px;
     margin-bottom: 35px;
   }
 
   .appointment-header h1 {
-    font-size: 52px;
-
+    font-size: clamp(42px, 10vw, 54px);
+    line-height: 0.95;
     letter-spacing: -2px;
   }
 
-  .booking-card {
-    padding: 25px;
+  .appointment-header p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
-  .service-grid {
-    grid-template-columns: 1fr;
+  .header-badge {
+    align-self: flex-start;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  /* -------------------------------------------------------
+     BOOKING LAYOUT
+     ------------------------------------------------------- */
 
-    gap: 0;
-  }
-
-  .booking-side {
+  .booking-layout {
     display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+    width: 100%;
   }
 
-  .orange-card {
-    padding: 30px;
-  }
-
-  .orange-card h2 {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .appointment-header h1 {
-    font-size: 42px;
-  }
+  /* -------------------------------------------------------
+     BOOKING CARD
+     ------------------------------------------------------- */
 
   .booking-card {
-    padding: 20px;
+    width: 100%;
+    padding: 25px 20px;
+
+    border-radius: 8px;
+  }
+
+  .card-heading {
+    margin-bottom: 25px;
   }
 
   .card-heading h2 {
-    font-size: 22px;
+    font-size: 24px;
+  }
+
+  /* -------------------------------------------------------
+     FORM
+     ------------------------------------------------------- */
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .input-wrapper,
+  .textarea-wrapper {
+    width: 100%;
+  }
+
+  .input-wrapper input,
+  .textarea-wrapper textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .textarea-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  /* -------------------------------------------------------
+     FORM ROW
+     ------------------------------------------------------- */
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* -------------------------------------------------------
+     SUBMIT BUTTON
+     ------------------------------------------------------- */
+
+  .book-button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  /* -------------------------------------------------------
+     SIDE SECTION
+     ------------------------------------------------------- */
+
+  .booking-side {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 20px;
+  }
+
+  /* Orange card */
+
+  .orange-card {
+    width: 100%;
+    padding: 30px 25px;
+    box-sizing: border-box;
+  }
+
+  .orange-card h2 {
+    font-size: clamp(32px, 8vw, 40px);
+    line-height: 1;
+  }
+
+  .orange-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .benefits {
+    gap: 15px;
+  }
+
+  /* Summary */
+
+  .summary-card {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+
+  .summary-details {
+    gap: 18px;
+  }
+
+  .summary-details strong {
+    word-break: break-word;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE — 480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .appointment-page {
+    padding: 30px 15px 50px;
+  }
+
+  /* Header */
+
+  .appointment-header {
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .appointment-header h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .appointment-header p {
+    font-size: 13px;
+  }
+
+  /* Badge */
+
+  .header-badge {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* Booking */
+
+  .booking-card {
+    padding: 22px 17px;
+  }
+
+  .card-heading h2 {
+    font-size: 21px;
+  }
+
+  .card-heading span {
+    font-size: 12px;
+  }
+
+  /* Labels */
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .input-wrapper input,
+  .textarea-wrapper textarea {
+    font-size: 14px;
+  }
+
+  /* Orange card */
+
+  .orange-card {
+    padding: 25px 20px;
+  }
+
+  .orange-card h2 {
+    font-size: 34px;
+  }
+
+  .orange-card p {
+    font-size: 13px;
+  }
+
+  /* Summary */
+
+  .summary-card {
+    padding: 22px 20px;
+  }
+
+  .summary-bike {
+    gap: 12px;
+  }
+
+  .summary-details {
+    gap: 15px;
+  }
+
+  .summary-details span,
+  .summary-details strong {
+    font-size: 13px;
+  }
+
+  .summary-footer {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES — 360px and below
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .appointment-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .appointment-header h1 {
+    font-size: 36px;
+  }
+
+  .booking-card {
+    padding: 18px 15px;
+  }
+
+  .orange-card h2 {
+    font-size: 30px;
   }
 
   .summary-card {
-    padding: 25px;
+    padding: 20px 16px;
   }
 }
 .booking-notification {
