@@ -1,43 +1,57 @@
 <section id="how-it-works" class="section how-it-works-section" aria-labelledby="how-heading">
   <div class="container">
-    <div class="how-header text-center">
-      <p class="section-eyebrow">SIMPLE & TRANSPARENT</p>
-      <h2 id="how-heading" class="section-title">
-        How It <span>Works</span>
-      </h2>
-      <p class="section-subtitle mx-auto">
-        A seamless four-step process designed to get you from initial booking to smooth riding with zero hassle.
-      </p>
-    </div>
+    <div class="how-layout">
+      <!-- Left Column: Process Steps -->
+      <div class="how-left" appScrollReveal="fade-right">
+        <p class="section-eyebrow">SIMPLE & EASY</p>
+        <h2 id="how-heading" class="section-title">
+          HOW IT <span class="text-orange">WORKS</span>
+        </h2>
+        <p class="section-subtitle">
+          Get your bike serviced in just a few simple steps.
+        </p>
 
-    <div class="process-timeline">
-      <div class="timeline-line" aria-hidden="true"></div>
-
-      <div class="steps-grid">
-        @for (item of steps; track item.step; let idx = $index) {
-          <div class="step-card">
-            <div class="step-badge-wrap">
-              <span class="step-num">{{ item.step }}</span>
-              <div class="step-icon-circle">
-                <i [class]="item.icon"></i>
+        <div class="how-steps-timeline">
+          @for (item of steps; track item.step; let idx = $index; let last = $last) {
+            <div class="timeline-step-item" appScrollReveal="fade-up" [delay]="idx * 150">
+              <div class="step-badge-row">
+                <span class="step-num-badge">{{ item.step }}</span>
+                <div class="step-icon-circle">
+                  <i [class]="item.icon"></i>
+                </div>
               </div>
-            </div>
 
-            <div class="step-body">
-              <span class="step-subtitle">{{ item.subtitle }}</span>
-              <h3 class="step-title">{{ item.title }}</h3>
-              <p class="step-description">{{ item.description }}</p>
+              <div class="step-info">
+                <h3 class="step-name">{{ item.title }}</h3>
+                <p class="step-summary">{{ item.description }}</p>
+              </div>
+
+              @if (!last) {
+                <div class="step-arrow-divider" aria-hidden="true">
+                  <i class="pi pi-arrow-right"></i>
+                </div>
+              }
             </div>
-          </div>
-        }
+          }
+        </div>
       </div>
-    </div>
 
-    <div class="how-cta text-center">
-      <a routerLink="/appointment" class="btn-primary">
-        <span>Book Your Service Now</span>
-        <i class="pi pi-arrow-right"></i>
-      </a>
+      <!-- Right Column: Visual Image Banner -->
+      <div class="how-right" appScrollReveal="fade-left">
+        <div class="how-image-card">
+          <img
+            src="assets/images/about-bike.jpeg"
+            alt="Cyclist riding into the sunset"
+            class="cyclist-img"
+            loading="lazy"
+          />
+          <div class="how-image-overlay"></div>
+          <div class="how-image-badge">
+            <i class="pi pi-shield"></i>
+            <span>Certified Service Warranty</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

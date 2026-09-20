@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../../../common/directives/scroll-reveal.directive';
 
 interface GalleryItem {
   image: string;
@@ -10,6 +11,7 @@ interface GalleryItem {
 @Component({
   selector: 'app-gallery',
   standalone: true,
+  imports: [ScrollRevealDirective],
   templateUrl: './gallery.html',
   styleUrl: './gallery.scss',
 })
@@ -40,13 +42,13 @@ export class Gallery {
       title: 'Race-Ready Road Setup',
     },
     {
-      image: 'assets/images/bike.png',
+      image: 'assets/images/about-bike.jpeg',
       alt: 'Custom component overhaul and wheel truing',
       tag: 'Assembly',
       title: 'Precision Component Assembly',
     },
     {
-      image: 'assets/images/herobg.png',
+      image: 'assets/images/Bikes.jpg',
       alt: 'Bicycle road testing after complete overhaul',
       tag: 'Road Test',
       title: 'Dynamic Ride Testing',

@@ -1,26 +1,17 @@
-<section id="home" class="hero">
-  <!-- Blue background -->
-  <div class="hero-blue-bg"></div>
+<section id="home" class="hero" aria-label="Hero Section">
+  <!-- Dark atmospheric background layer -->
+  <div class="hero-blue-bg" aria-hidden="true"></div>
 
-  <!-- Decorative SVG -->
-  <!-- <div class="hero-svg">
-    
-  </div> -->
-  <div class="hero-image">
-    <!-- <img src="assets/images/AM.png" alt="" /> -->
-  </div>
-  <!-- Existing visual layers -->
-  <!-- <div class="hero-image" #heroImage></div>
-  <div class="hero-fixed-layer" #heroFixedLayer></div> -->
-  <!-- <div class="hero-overlay"></div> -->
+  <!-- Parallax Bike Blueprint Silhouette/Mask -->
+  <div class="hero-image" aria-hidden="true"></div>
 
   <div class="hero-content">
     <p class="hero-eyebrow">PROFESSIONAL BICYCLE SERVICE</p>
 
-    <h1>
-      RIDE.
+    <h1 class="hero-title">
+      KEEP YOUR RIDE
       <br />
-      <span>REPAIR , REPEAT.</span>
+      <span class="text-orange">IN TOP SHAPE</span>
     </h1>
 
     <p class="hero-description">
@@ -28,17 +19,68 @@
     </p>
 
     <div class="hero-actions">
-      <a routerLink="/appointment" class="hero-primary">
-        Book a Service
+      <a routerLink="/appointment" class="hero-primary btn-primary">
+        <span>Book a Service</span>
         <i class="pi pi-arrow-right"></i>
       </a>
 
-      <a href="#services" class="hero-secondary"> Explore Services </a>
+      <a href="#services" class="hero-secondary btn-secondary">
+        <span>Explore Services</span>
+      </a>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="mouse-icon">
+        <div class="mouse-wheel"></div>
+      </div>
+      <span>SCROLL TO EXPLORE</span>
     </div>
   </div>
+</section>
 
-  <div class="hero-scroll">
-    <span>Scroll to explore</span>
-    <i class="pi pi-arrow-down"></i>
+<!-- 4 Key Feature Highlights Bar -->
+<section class="hero-features-bar" aria-label="Key Advantages">
+  <div class="container">
+    <div class="features-bar-grid">
+      <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="100">
+        <div class="feature-icon-circle">
+          <i class="pi pi-wrench"></i>
+        </div>
+        <div class="feature-bar-text">
+          <h4>EXPERT TECHNICIANS</h4>
+          <p>Skilled professionals with real cycling experience.</p>
+        </div>
+      </div>
+
+      <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="200">
+        <div class="feature-icon-circle">
+          <i class="pi pi-shield"></i>
+        </div>
+        <div class="feature-bar-text">
+          <h4>QUALITY PARTS</h4>
+          <p>Genuine parts for longer performance.</p>
+        </div>
+      </div>
+
+      <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="300">
+        <div class="feature-icon-circle">
+          <i class="pi pi-clock"></i>
+        </div>
+        <div class="feature-bar-text">
+          <h4>FAST SERVICE</h4>
+          <p>Get back on the road sooner.</p>
+        </div>
+      </div>
+
+      <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="400">
+        <div class="feature-icon-circle">
+          <i class="pi pi-compass"></i>
+        </div>
+        <div class="feature-bar-text">
+          <h4>ALL BIKE TYPES</h4>
+          <p>Road, MTB, Hybrid, E-bike and more.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

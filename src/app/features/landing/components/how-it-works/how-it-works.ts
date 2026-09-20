@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ScrollRevealDirective } from '../../../../common/directives/scroll-reveal.directive';
 
 interface Step {
   step: string;
   title: string;
-  subtitle: string;
   icon: string;
   description: string;
 }
@@ -12,7 +11,7 @@ interface Step {
 @Component({
   selector: 'app-how-it-works',
   standalone: true,
-  imports: [RouterLink],
+  imports: [ScrollRevealDirective],
   templateUrl: './how-it-works.html',
   styleUrl: './how-it-works.scss',
 })
@@ -20,31 +19,21 @@ export class HowItWorks {
   steps: Step[] = [
     {
       step: '01',
-      title: 'Book',
-      subtitle: 'Schedule Online',
+      title: 'Book Appointment',
       icon: 'pi pi-calendar',
-      description: 'Choose your bicycle type, select the required service package or describe the issue, and pick a convenient date.',
+      description: 'Choose date and time that works for you.',
     },
     {
       step: '02',
-      title: 'Drop Off',
-      subtitle: 'Visit Our Center',
-      icon: 'pi pi-map-marker',
-      description: 'Bring your bicycle to our service center in Salem. Our mechanic will conduct an initial check-in inspection with you.',
+      title: 'Service & Repair',
+      icon: 'pi pi-wrench',
+      description: 'Our experts get to work on your bike.',
     },
     {
       step: '03',
-      title: 'Service',
-      subtitle: 'Expert Technicians',
-      icon: 'pi pi-cog',
-      description: 'Our certified technicians complete all repairs with factory-grade tools, precision torque specs, and genuine components.',
-    },
-    {
-      step: '04',
       title: 'Ride Again',
-      subtitle: 'Collect & Enjoy',
-      icon: 'pi pi-check-circle',
-      description: 'Receive notification when your bike passes road testing. Pick it up fully tuned, cleaned, and ready for every mile.',
+      icon: 'pi pi-check',
+      description: 'Pick up your bike and hit the road.',
     },
   ];
 }

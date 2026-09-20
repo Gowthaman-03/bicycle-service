@@ -2,7 +2,7 @@
   <div class="container">
     <div class="about-grid">
       <!-- Left Visual / Image Side -->
-      <div class="about-visual">
+      <div class="about-visual" appScrollReveal="fade-right">
         <div class="about-image-card">
           <img src="assets/images/about-bike.jpeg" alt="Professional bicycle workshop mechanic servicing a bicycle" class="about-img" />
           <div class="image-gradient-overlay"></div>
@@ -23,11 +23,11 @@
       </div>
 
       <!-- Right Editorial Content Side -->
-      <div class="about-content">
+      <div class="about-content" appScrollReveal="fade-left">
         <p class="section-eyebrow">BUILT AROUND YOUR RIDE</p>
         
         <h2 id="about-heading" class="section-title">
-          Engineering <span>Care</span> for Every Ride
+          Engineering <span class="text-orange">Care</span> for Every Ride
         </h2>
 
         <p class="about-lead">
@@ -40,7 +40,7 @@
 
         <!-- Trust Points Grid -->
         <div class="about-trust-grid">
-          <div class="trust-point">
+          <div class="trust-point" appScrollReveal="fade-up" [delay]="100">
             <div class="point-icon"><i class="pi pi-wrench"></i></div>
             <div class="point-text">
               <h4>Professional Service</h4>
@@ -48,7 +48,7 @@
             </div>
           </div>
 
-          <div class="trust-point">
+          <div class="trust-point" appScrollReveal="fade-up" [delay]="200">
             <div class="point-icon"><i class="pi pi-shield"></i></div>
             <div class="point-text">
               <h4>Quality Parts</h4>
@@ -56,7 +56,7 @@
             </div>
           </div>
 
-          <div class="trust-point">
+          <div class="trust-point" appScrollReveal="fade-up" [delay]="300">
             <div class="point-icon"><i class="pi pi-search"></i></div>
             <div class="point-text">
               <h4>Detailed Inspection</h4>
@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <div class="trust-point">
+          <div class="trust-point" appScrollReveal="fade-up" [delay]="400">
             <div class="point-icon"><i class="pi pi-file-edit"></i></div>
             <div class="point-text">
               <h4>Transparent Process</h4>

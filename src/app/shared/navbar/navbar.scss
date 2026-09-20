@@ -3,30 +3,37 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 84px;
   z-index: 9999;
-  background: transparent;
-  // background: rgba(255, 255, 255, 0.322);
-  transition:
-    background-color 0.4s ease,
-    backdrop-filter 0.4s ease,
-    box-shadow 0.4s ease;
+  background: rgba(2, 12, 27, 0.75);
+  background-image: url('/assets/images/herobg.png');
+  background-size: cover;
+  background-position: center top;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(43, 90, 153, 0.3);
+  transition: all 0.35s ease;
 }
 
 .navbar.navbar-scrolled {
-  background: rgba(5, 5, 5, 0.85);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(2, 12, 27, 0.94);
+  background-image: url('/assets/images/herobg.png');
+  background-size: cover;
+  background-position: center top;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 90, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .navbar-inner {
   height: 100%;
   width: 96%;
+  max-width: var(--container-max);
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .logo {
@@ -35,13 +42,13 @@
   transition: transform 0.2s ease;
 
   img {
-    height: 38px;
+    height: 40px;
     width: auto;
     object-fit: contain;
   }
 
   &:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 }
 
@@ -52,13 +59,14 @@
 
   .nav-link {
     color: var(--text-secondary);
-    font-size: 14px;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     position: relative;
     padding: 6px 0;
-    transition: color 0.2s ease;
+    transition: color 0.25s ease;
 
     &::after {
       content: '';
@@ -86,19 +94,20 @@
     gap: 8px;
     background: var(--primary);
     color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 10px 20px;
+    letter-spacing: 0.1em;
+    padding: 11px 22px;
     border-radius: 4px;
     border: 1px solid var(--primary);
     transition: all 0.25s ease;
-    box-shadow: 0 4px 15px var(--primary-glow);
-    margin-left: 8px;
+    box-shadow: 0 4px 18px var(--primary-glow);
+    margin-left: 12px;
 
     i {
-      font-size: 12px;
+      font-size: 11px;
       transition: transform 0.2s ease;
     }
 
@@ -106,7 +115,7 @@
       background: var(--primary-hover);
       border-color: var(--primary-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+      box-shadow: 0 6px 24px rgba(255, 90, 0, 0.45);
 
       i {
         transform: translateX(3px);
@@ -121,14 +130,16 @@
 
 /* Mobile Drawer Styling */
 :host ::ng-deep .custom-mobile-drawer {
-  background-color: var(--bg-surface) !important;
+  background-color: #020e21 !important;
+  background-image: url('/assets/images/herobg.png') !important;
+  background-size: cover !important;
   color: var(--text-primary) !important;
   border-left: 1px solid var(--border-subtle) !important;
   width: min(320px, 85vw) !important;
 
   .p-drawer-header {
     padding: 20px 24px;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid rgba(43, 90, 153, 0.25);
   }
 
   .drawer-header-brand .drawer-logo {
@@ -148,8 +159,11 @@
     align-items: center;
     gap: 14px;
     color: var(--text-secondary);
-    font-size: 16px;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     padding: 12px 16px;
     border-radius: 6px;
     transition: all 0.2s ease;

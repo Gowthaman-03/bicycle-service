@@ -1,10 +1,10 @@
 <section id="gallery" class="section gallery-section" aria-labelledby="gallery-heading">
   <div class="container">
-    <div class="gallery-header">
+    <div class="gallery-header" appScrollReveal="fade-up">
       <div>
         <p class="section-eyebrow">THE WORKSHOP</p>
         <h2 id="gallery-heading" class="section-title">
-          Craft In <span>Motion</span>
+          Craft In <span class="text-orange">Motion</span>
         </h2>
       </div>
       <p class="section-subtitle">
@@ -13,8 +13,8 @@
     </div>
 
     <div class="gallery-grid">
-      @for (item of items; track item.title) {
-        <div class="gallery-card">
+      @for (item of items; track item.title; let idx = $index) {
+        <div class="gallery-card" appScrollReveal="scale" [delay]="idx * 100">
           <div class="gallery-image-wrap">
             <img [src]="item.image" [alt]="item.alt" loading="lazy" class="gallery-img" />
             <div class="gallery-overlay">

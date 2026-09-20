@@ -1,152 +1,189 @@
 .how-it-works-section {
-  background-color: var(--bg-main);
   position: relative;
-  overflow: hidden;
+  padding: 80px 0;
 }
 
-.how-header {
-  margin-bottom: 64px;
-
-  &.text-center {
-    text-align: center;
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.process-timeline {
-  position: relative;
-  margin-bottom: 56px;
-}
-
-.timeline-line {
-  position: absolute;
-  top: 40px;
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    rgba(255, 106, 0, 0.2) 0%, 
-    rgba(255, 106, 0, 0.8) 50%, 
-    rgba(255, 106, 0, 0.2) 100%
-  );
-  z-index: 1;
-}
-
-.steps-grid {
+.how-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  position: relative;
-  z-index: 2;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
 }
 
-.step-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 32px 24px;
+.how-left {
+  .section-title {
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 40px;
+  }
+}
+
+.how-steps-timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-step-item {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+}
 
-  &:hover {
-    background-color: var(--bg-card-hover);
-    border-color: rgba(255, 106, 0, 0.4);
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+.step-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
 
-    .step-icon-circle {
-      background-color: var(--primary);
-      color: #ffffff;
-      transform: scale(1.1);
-      box-shadow: 0 0 20px var(--primary-glow);
+.step-num-badge {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  background: var(--primary);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 90, 0, 0.7);
+  background: rgba(255, 90, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.timeline-step-item:hover .step-icon-circle {
+  background: var(--primary);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 16px var(--primary-glow);
+}
+
+.step-info {
+  .step-name {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .step-summary {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+}
+
+.step-arrow-divider {
+  position: absolute;
+  top: 14px;
+  right: -14px;
+  color: rgba(255, 90, 0, 0.5);
+  font-size: 14px;
+}
+
+/* Right Visual Image Card */
+.how-right {
+  display: flex;
+  justify-content: center;
+}
+
+.how-image-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+
+  .cyclist-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover .cyclist-img {
+    transform: scale(1.04);
+  }
+
+  .how-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 7, 9, 0.1) 0%, rgba(6, 7, 9, 0.8) 100%);
+  }
+
+  .how-image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(14, 16, 22, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 90, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    i {
+      color: var(--primary);
     }
   }
 }
 
-.step-badge-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.step-num {
-  font-family: var(--font-display);
-  font-size: 32px;
-  color: var(--primary);
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
-.step-icon-circle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-medium);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.step-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.step-subtitle {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.step-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-
-.step-description {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.how-cta {
-  display: flex;
-  justify-content: center;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1024px) {
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .timeline-line {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .steps-grid {
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .how-layout {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .step-card {
-    padding: 24px 20px;
+  .how-image-card {
+    max-width: 100%;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-steps-timeline {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .step-arrow-divider {
+    display: none;
   }
 }

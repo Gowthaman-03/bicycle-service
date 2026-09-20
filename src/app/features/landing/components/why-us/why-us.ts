@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../../../common/directives/scroll-reveal.directive';
 
 interface TrustBenefit {
   number: string;
@@ -10,6 +11,7 @@ interface TrustBenefit {
 @Component({
   selector: 'app-why-us',
   standalone: true,
+  imports: [ScrollRevealDirective],
   templateUrl: './why-us.html',
   styleUrl: './why-us.scss',
 })
@@ -24,14 +26,14 @@ export class WhyUs {
     },
     {
       number: '02',
-      icon: 'pi pi-verified',
+      icon: 'pi pi-shield',
       title: 'Quality Service & Parts',
       description:
         'We strictly use original factory components, high-load synthetic greases, and industry-standard precision tools.',
     },
     {
       number: '03',
-      icon: 'pi pi-eye',
+      icon: 'pi pi-search',
       title: 'Transparent Process',
       description:
         'Upfront price estimates with itemized breakdowns. We only perform and charge for repairs you have approved.',
