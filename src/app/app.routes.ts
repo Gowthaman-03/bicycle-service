@@ -13,24 +13,16 @@ export const routes: Routes = [
     component: Landing,
     // canActivate: [authGuard],
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-    // canActivate: [authGuard],
-  },
-
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  // canActivate: [authGuard],
+  // },
   {
     path: 'service',
     component: ServicesComponent,
     // canActivate: [authGuard],
   },
-
-  {
-    path: 'dashboard',
-    component: Dashboard,
-    canActivate: [authGuard],
-  },
-
   {
     path: 'appointment',
     component: AppointmentComponent,

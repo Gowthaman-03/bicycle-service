@@ -29,11 +29,7 @@
     </div>
 
     <div class="featured-grid">
-      <div
-        class="featured-card"
-        *ngFor="let service of services"
-        [class.hidden]="!service.featured"
-      >
+      <div class="featured-card" *ngFor="let service of services" [class.hidden]="!service.featured">
         <div class="service-number">
           {{ service.number }}
         </div>
@@ -48,10 +44,10 @@
           {{ service.description }}
         </p>
 
-        <button class="service-link">
+        <!-- <button class="service-link">
           Explore Service
           <i class="pi pi-arrow-right"></i>
-        </button>
+        </button> -->
       </div>
     </div>
   </section>
@@ -70,11 +66,8 @@
     <!-- CATEGORY FILTER -->
 
     <div class="service-filters">
-      <button
-        *ngFor="let category of categories"
-        (click)="selectCategory(category)"
-        [class.active]="selectedCategory === category"
-      >
+      <button *ngFor="let category of categories" (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category">
         {{ category }}
       </button>
     </div>
@@ -103,12 +96,12 @@
           {{ service.description }}
         </p>
 
-        <div class="card-footer">
+        <!-- <div class="card-footer">
           <button>
             View Details
             <i class="pi pi-arrow-up-right"></i>
           </button>
-        </div>
+        </div> -->
       </article>
     </div>
   </section>

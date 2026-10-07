@@ -1,87 +1,193 @@
 <section id="about" class="section about-section" aria-labelledby="about-heading">
   <div class="container">
-    <div class="about-grid">
-      <!-- Left Visual / Image Side -->
-      <div class="about-visual" appScrollReveal="fade-right">
-        <div class="about-image-card">
-          <img src="assets/images/about-bike.jpeg" alt="Professional bicycle workshop mechanic servicing a bicycle" class="about-img" />
-          <div class="image-gradient-overlay"></div>
-          
-          <div class="image-badge">
-            <span class="badge-accent">EST. 2026</span>
-            <span class="badge-title">Precision Cycle Workshop</span>
-          </div>
+    <!-- Section Header -->
+    <div class="about-header text-center" appScrollReveal="fade-up">
+      <p class="section-eyebrow">OUR STORY & PEDIGREE</p>
+      <h2 id="about-heading" class="section-title">
+        Born on Extreme Trails. <span class="text-orange">Engineered for Your Ride.</span>
+      </h2>
+      <p class="section-subtitle mx-auto">
+        When your bikes are tuned by national downhill champions and manufacturing engineers, every bolt, bleed, and gear shift is calibrated with zero-tolerance precision.
+      </p>
+    </div>
 
-          <div class="floating-stat-box">
-            <i class="pi pi-shield"></i>
-            <div>
-              <strong>Factory Tools</strong>
-              <span>Park Tool & Shimano Certified</span>
+    <!-- Core Founders / Leaders Showcase -->
+    <div class="founders-grid">
+      <!-- Founder 1: S. Thilothamma -->
+      <article class="founder-card blueprint-card" appScrollReveal="fade-right" [delay]="100">
+        <div class="card-accent-tag">
+          <i class="pi pi-trophy"></i>
+          <span>National MTB Champion</span>
+        </div>
+
+        <div class="founder-header">
+          <div class="avatar-badge-wrap">
+            <div class="founder-avatar-icon">
+              <i class="pi pi-star-fill"></i>
             </div>
+            <span class="status-indicator" title="Active Competitor"></span>
+          </div>
+          <div class="founder-titles">
+            <h3 class="founder-name">S. Thilothamma</h3>
+            <span class="founder-role">National Downhill Champion & M.E. Manufacturing Engineer</span>
+            <span class="founder-origin"><i class="pi pi-map-marker"></i> Katpadi (Vellore) / GCT Coimbatore</span>
+          </div>
+        </div>
+
+        <p class="founder-bio">
+          The first and only woman from South India to conquer the extreme, high-risk Downhill Mountain Biking discipline. Navigating vertical drops, rock gardens, and jumps at speeds up to <strong>80 km/h</strong>, she transformed intense resource constraints and borrowed bikes into historic national gold.
+        </p>
+
+        <!-- Achievements Badges -->
+        <div class="accolades-container">
+          <h4 class="accolade-title"><i class="pi pi-shield"></i> Championship Record</h4>
+          <ul class="accolades-list">
+            <li>
+              <span class="medal-tag gold">🥇 2025 Gold</span>
+              <div class="accolade-detail">
+                <strong>National Champion (Women Elite Downhill)</strong>
+                <p>21st National MTB Championship, Morni Hills (Cycling Federation of India)</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag bronze">🥉 2026 Bronze</span>
+              <div class="accolade-detail">
+                <strong>Asian MTB Series Medalist</strong>
+                <p>Won Bronze for India in Himachal Pradesh against elite international riders</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag bronze">🥉 2026 Bronze</span>
+              <div class="accolade-detail">
+                <strong>22nd National MTB Championship</strong>
+                <p>National Downhill Podium in Arunachal Pradesh</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag debut">🏁 2023 Debut</span>
+              <div class="accolade-detail">
+                <strong>Tamil Nadu Cycling Team Debut</strong>
+                <p>6th in Cross Country at 19th National MTB Championship (Chandigarh)</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="founder-footer-pill">
+          <i class="pi pi-graduation-cap"></i>
+          <span>B.E. & M.E. Manufacturing Engineering (GCT Coimbatore)</span>
+        </div>
+      </article>
+
+      <!-- Founder 2: Gokul Krishnan -->
+      <article class="founder-card blueprint-card" appScrollReveal="fade-left" [delay]="200">
+        <div class="card-accent-tag">
+          <i class="pi pi-wrench"></i>
+          <span>Technical Mastermind & Mentor</span>
+        </div>
+
+        <div class="founder-header">
+          <div class="avatar-badge-wrap">
+            <div class="founder-avatar-icon">
+              <i class="pi pi-cog"></i>
+            </div>
+            <span class="status-indicator" title="Lead Master Technician"></span>
+          </div>
+          <div class="founder-titles">
+            <h3 class="founder-name">Gokul Krishnan</h3>
+            <span class="founder-role">Elite Downhill Racer & Master Bicycle Technician</span>
+            <span class="founder-origin"><i class="pi pi-map-marker"></i> Coimbatore, Tamil Nadu</span>
+          </div>
+        </div>
+
+        <p class="founder-bio">
+          The technical backbone and mentor behind South India's historic downhill breakthrough. As an active elite downhill competitor and seasoned bicycle technician with years of specialized experience at <strong>Decathlon India</strong>, he brings race-proven mechanical intuition to every service.
+        </p>
+
+        <!-- Mechanical Expertise Highlights -->
+        <div class="accolades-container">
+          <h4 class="accolade-title"><i class="pi pi-sliders-h"></i> Technical Mastery & Impact</h4>
+          <ul class="accolades-list">
+            <li>
+              <span class="medal-tag tech">🛠️ Tech Veteran</span>
+              <div class="accolade-detail">
+                <strong>Specialist Bicycle Technician</strong>
+                <p>Multi-year tenure at Decathlon India with expert component diagnostic mastery</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag race">⚡ Pro Downhill</span>
+              <div class="accolade-detail">
+                <strong>Active Elite Competitive Athlete</strong>
+                <p>Master of high-speed track reading, frame kinematics, and shock tuning</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag mentor">🤝 Gear & Sponsorship</span>
+              <div class="accolade-detail">
+                <strong>The ₹12L Pro Machine Support</strong>
+                <p>Lent his own high-performance race machine to fuel Thilothamma's gold medal run</p>
+              </div>
+            </li>
+            <li>
+              <span class="medal-tag advocate">🌟 Community Voice</span>
+              <div class="accolade-detail">
+                <strong>Pioneer for Women in Extreme Sports</strong>
+                <p>Spearheading talent development and accessible elite racing infrastructure</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="founder-footer-pill">
+          <i class="pi pi-check-circle"></i>
+          <span>Expertise in Hydraulic Bleeds, Air-Suspension Tuning & Custom Builds</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- The Workshop Philosophy & Speed Metrics Banner -->
+    <div class="workshop-manifesto blueprint-card" appScrollReveal="fade-up" [delay]="300">
+      <div class="manifesto-content">
+        <span class="manifesto-eyebrow">OUR SERVICE PHILOSOPHY</span>
+        <h3 class="manifesto-title">
+          Why Race-Grade Precision Matters For <span class="text-orange">Your Daily Ride</span>
+        </h3>
+        <p class="manifesto-desc">
+          In Downhill mountain biking, a poorly torqued bolt or spongy brake at 80 km/h is catastrophic. We apply that exact uncompromising standard to every road bike, commuter, hybrid, and trail rig that enters our workshop.
+        </p>
+
+        <div class="manifesto-metrics">
+          <div class="metric-item">
+            <span class="metric-value">80<small>km/h</small></span>
+            <span class="metric-label">High-Speed Trail Proven</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">₹12L+</span>
+            <span class="metric-label">Elite Rig Tuning Mastery</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">1st</span>
+            <span class="metric-label">South Indian Woman MTB Champ</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">100%</span>
+            <span class="metric-label">Engineering Precision Check</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Editorial Content Side -->
-      <div class="about-content" appScrollReveal="fade-left">
-        <p class="section-eyebrow">BUILT AROUND YOUR RIDE</p>
-        
-        <h2 id="about-heading" class="section-title">
-          Engineering <span class="text-orange">Care</span> for Every Ride
-        </h2>
-
-        <p class="about-lead">
-          Your bicycle is an engineered machine deserving more than a superficial tune-up. Our Salem workshop operates with dedicated tooling, diagnostic precision, and a deep passion for cycling performance.
-        </p>
-
-        <p class="about-text">
-          Whether you depend on a daily commuter, train on a carbon road machine, or ride tough weekend trails, we treat every bike with individual inspection, exact torque specifications, and genuine replacement components.
-        </p>
-
-        <!-- Trust Points Grid -->
-        <div class="about-trust-grid">
-          <div class="trust-point" appScrollReveal="fade-up" [delay]="100">
-            <div class="point-icon"><i class="pi pi-wrench"></i></div>
-            <div class="point-text">
-              <h4>Professional Service</h4>
-              <p>Experienced mechanics trained in mechanical and electronic drivetrains.</p>
-            </div>
-          </div>
-
-          <div class="trust-point" appScrollReveal="fade-up" [delay]="200">
-            <div class="point-icon"><i class="pi pi-shield"></i></div>
-            <div class="point-text">
-              <h4>Quality Parts</h4>
-              <p>Only authentic spares, lubricants, and high-performance consumables.</p>
-            </div>
-          </div>
-
-          <div class="trust-point" appScrollReveal="fade-up" [delay]="300">
-            <div class="point-icon"><i class="pi pi-search"></i></div>
-            <div class="point-text">
-              <h4>Detailed Inspection</h4>
-              <p>Comprehensive pre- and post-service safety diagnostics on all components.</p>
-            </div>
-          </div>
-
-          <div class="trust-point" appScrollReveal="fade-up" [delay]="400">
-            <div class="point-icon"><i class="pi pi-file-edit"></i></div>
-            <div class="point-text">
-              <h4>Transparent Process</h4>
-              <p>Clear upfront quotes, no hidden costs, and honest turnaround estimates.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-actions">
-          <a routerLink="/appointment" class="btn-primary">
-            <span>Book a Workshop Visit</span>
-            <i class="pi pi-arrow-right"></i>
-          </a>
-          <a href="#services" class="btn-secondary">
-            <span>View Service Packages</span>
-          </a>
-        </div>
+      <div class="manifesto-cta">
+        <a routerLink="/appointment" class="btn-primary">
+          <span>Schedule Service</span>
+          <i class="pi pi-arrow-right"></i>
+        </a>
+        <a href="#services" class="btn-secondary">
+          <span>Explore Packages</span>
+        </a>
       </div>
     </div>
   </div>

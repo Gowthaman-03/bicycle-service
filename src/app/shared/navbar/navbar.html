@@ -11,7 +11,7 @@
       <a href="#about" class="nav-link">About</a>
       <a href="#services" class="nav-link">Services</a>
       <a href="#how-it-works" class="nav-link">How It Works</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
+      <!-- <a href="#gallery" class="nav-link">Gallery</a> -->
       <a href="#contact" class="nav-link">Contact</a>
 
       <a routerLink="/appointment" class="nav-book-btn">
@@ -21,13 +21,8 @@
     </nav>
 
     <!-- MOBILE / TABLET MENU TOGGLE -->
-    <p-button
-      class="mobile-menu-button"
-      [icon]="mobileMenuVisible ? 'pi pi-times' : 'pi pi-bars'"
-      [text]="true"
-      (onClick)="toggleMobileMenu()"
-      ariaLabel="Toggle mobile menu"
-    />
+    <p-button class="mobile-menu-button" [icon]="mobileMenuVisible ? 'pi pi-times' : 'pi pi-bars'" [text]="true"
+      (onClick)="toggleMobileMenu()" ariaLabel="Toggle mobile menu" />
   </div>
 </header>
 
@@ -56,10 +51,10 @@
       <i class="pi pi-list-check"></i>
       <span>How It Works</span>
     </a>
-    <a href="#gallery" (click)="closeMenu()" class="mobile-link">
+    <!-- <a href="#gallery" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-images"></i>
       <span>Gallery</span>
-    </a>
+    </a> -->
     <a href="#contact" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-phone"></i>
       <span>Contact</span>
