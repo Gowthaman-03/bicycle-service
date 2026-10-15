@@ -15,7 +15,7 @@
   --primary-border: rgba(255, 90, 0, 0.3);
 
   /* Premium Obsidian & Dark Palette Backgrounds */
-  --bg-main: #060709;
+  // --bg-main: #060709;
   --bg-surface: #0a0c10;
   --bg-card: rgba(14, 16, 22, 0.75);
   --bg-card-hover: rgba(22, 25, 35, 0.9);
@@ -70,7 +70,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   color-scheme: dark;
-  background-color: var(--bg-main);
+  // background-color: var(--bg-main);
 }
 
 body {
@@ -82,8 +82,8 @@ body {
   //   radial-gradient(circle at 90% 25%, rgba(255, 90, 0, 0.03) 0%, transparent 40%),
   //   radial-gradient(circle at 10% 70%, rgba(255, 90, 0, 0.03) 0%, transparent 40%),
   //   linear-gradient(180deg, #060709 0%, #090a0f 50%, #050608 100%);
-  background-attachment: fixed;
-  background: transparent !important;
+  // background-attachment: fixed;
+  // background: transparent !important;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 16px;
