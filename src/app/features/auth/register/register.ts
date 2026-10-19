@@ -7,3 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './register.scss',
 })
 export class RegisterComponent {}
+export { RegisterComponent as Register };

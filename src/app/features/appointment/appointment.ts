@@ -1,7 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { Appointmentservice } from './appointmentservice';
+
+export { AppointmentComponent as Appointment };
 
 @Component({
   selector: 'app-appointment',
@@ -10,21 +13,33 @@ import { Appointmentservice } from './appointmentservice';
   templateUrl: './appointment.html',
   styleUrl: './appointment.scss',
 })
-export class AppointmentComponent {
+export class AppointmentComponent implements OnInit {
   private fb = inject(FormBuilder);
+  private route = inject(ActivatedRoute);
 
   isSubmitting = false;
   showNotification = false;
   private appointmentService = inject(Appointmentservice);
   today = new Date().toISOString().split('T')[0];
 
+  selectedServiceName: string | null = null;
+  selectedServiceId: string | null = null;
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      if (params['name']) {
+        this.selectedServiceName = params['name'];
+      }
+      if (params['service']) {
+        this.selectedServiceId = params['service'];
+      }
+    });
+  }
+
   appointmentForm = this.fb.group({
     name: ['', Validators.required],
-
     phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
-
     email: ['', [Validators.required, Validators.email]],
-
     address: [''],
   });
 

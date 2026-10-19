@@ -3,19 +3,20 @@
     <div class="how-layout">
       <!-- Left Column: Process Steps -->
       <div class="how-left" appScrollReveal="fade-right">
-        <p class="section-eyebrow">SIMPLE & EASY</p>
+        <p class="section-eyebrow">STANDARDIZED WORKFLOW</p>
         <h2 id="how-heading" class="section-title">
           HOW IT <span class="text-orange">WORKS</span>
         </h2>
         <p class="section-subtitle">
-          Get your bike serviced in just a few simple steps.
+          Every bicycle that enters our workshop passes through an uncompromising 4-stage engineering lifecycle.
         </p>
 
         <div class="how-steps-timeline">
           @for (item of steps; track item.step; let idx = $index; let last = $last) {
-            <div class="timeline-step-item" appScrollReveal="fade-up" [delay]="idx * 150">
+            <div class="timeline-step-item" appScrollReveal="fade-up" [delay]="idx * 130">
               <div class="step-badge-row">
                 <span class="step-num-badge">{{ item.step }}</span>
+                <span class="step-phase-badge">{{ item.phase }}</span>
                 <div class="step-icon-circle">
                   <i [class]="item.icon"></i>
                 </div>
@@ -41,14 +42,14 @@
         <div class="how-image-card">
           <img
             src="assets/images/about-bike.jpeg"
-            alt="Cyclist riding into the sunset"
+            alt="Freewheel Factory Specialized Workshop and Service Rig"
             class="cyclist-img"
             loading="lazy"
           />
           <div class="how-image-overlay"></div>
           <div class="how-image-badge">
             <i class="pi pi-shield"></i>
-            <span>Certified Service Warranty</span>
+            <span>Shimano &amp; Park Tool Certified Warranty</span>
           </div>
         </div>
       </div>

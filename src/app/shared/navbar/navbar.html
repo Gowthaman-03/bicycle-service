@@ -1,18 +1,19 @@
 <header class="navbar" [class.navbar-scrolled]="isScrolled" role="banner">
   <div class="navbar-inner">
     <!-- LOGO -->
-    <a href="/" class="logo" (click)="closeMenu()" aria-label="Cycle Service Center Home">
-      <img src="assets/images/logo.png" alt="Cycle Service Logo" />
+    <a routerLink="/" class="logo" (click)="closeMenu()" aria-label="Freewheel Factory Home">
+      <img src="assets/images/logo.png" alt="Freewheel Factory Logo" />
+      <span class="logo-text-badge">PERFORMANCE CENTRE</span>
     </a>
 
     <!-- DESKTOP NAV -->
     <nav class="desktop-nav" aria-label="Main Navigation">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#how-it-works" class="nav-link">How It Works</a>
-      <!-- <a href="#gallery" class="nav-link">Gallery</a> -->
-      <a href="#contact" class="nav-link">Contact</a>
+      <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/service" class="nav-link" routerLinkActive="active">Services</a>
+      <a routerLink="/" [fragment]="'how-it-works'" class="nav-link">Process</a>
+      <a routerLink="/" [fragment]="'about'" class="nav-link">Pedigree</a>
+      <a routerLink="/" [fragment]="'why-us'" class="nav-link">Standards</a>
+      <a routerLink="/" [fragment]="'contact'" class="nav-link">Contact</a>
 
       <a routerLink="/appointment" class="nav-book-btn">
         <span>Book Service</span>
@@ -21,8 +22,15 @@
     </nav>
 
     <!-- MOBILE / TABLET MENU TOGGLE -->
-    <p-button class="mobile-menu-button" [icon]="mobileMenuVisible ? 'pi pi-times' : 'pi pi-bars'" [text]="true"
-      (onClick)="toggleMobileMenu()" ariaLabel="Toggle mobile menu" />
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuVisible"
+      aria-label="Toggle navigation menu"
+    >
+      <i [class]="mobileMenuVisible ? 'pi pi-times' : 'pi pi-bars'"></i>
+    </button>
   </div>
 </header>
 
@@ -30,39 +38,39 @@
 <p-drawer [(visible)]="mobileMenuVisible" position="right" [closable]="true" styleClass="custom-mobile-drawer">
   <ng-template #header>
     <div class="drawer-header-brand">
-      <img src="assets/images/logo.png" alt="Cycle Service" class="drawer-logo" />
+      <img src="assets/images/logo.png" alt="Freewheel Factory" class="drawer-logo" />
     </div>
   </ng-template>
 
   <div class="mobile-nav">
-    <a href="#home" (click)="closeMenu()" class="mobile-link">
+    <a routerLink="/" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-home"></i>
       <span>Home</span>
     </a>
-    <a href="#about" (click)="closeMenu()" class="mobile-link">
-      <i class="pi pi-info-circle"></i>
-      <span>About</span>
-    </a>
-    <a href="#services" (click)="closeMenu()" class="mobile-link">
+    <a routerLink="/service" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-wrench"></i>
-      <span>Services</span>
+      <span>Services Catalog (17+)</span>
     </a>
-    <a href="#how-it-works" (click)="closeMenu()" class="mobile-link">
+    <a routerLink="/" [fragment]="'how-it-works'" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-list-check"></i>
-      <span>How It Works</span>
+      <span>Service Workflow</span>
     </a>
-    <!-- <a href="#gallery" (click)="closeMenu()" class="mobile-link">
-      <i class="pi pi-images"></i>
-      <span>Gallery</span>
-    </a> -->
-    <a href="#contact" (click)="closeMenu()" class="mobile-link">
+    <a routerLink="/" [fragment]="'about'" (click)="closeMenu()" class="mobile-link">
+      <i class="pi pi-trophy"></i>
+      <span>Founders & Pedigree</span>
+    </a>
+    <a routerLink="/" [fragment]="'why-us'" (click)="closeMenu()" class="mobile-link">
+      <i class="pi pi-shield"></i>
+      <span>Workshop Standards</span>
+    </a>
+    <a routerLink="/" [fragment]="'contact'" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-phone"></i>
-      <span>Contact</span>
+      <span>Location & Hours</span>
     </a>
 
     <div class="mobile-drawer-cta">
       <a routerLink="/appointment" class="btn-primary mobile-book-btn" (click)="closeMenu()">
-        <span>Book Service Now</span>
+        <span>Book Service Appointment</span>
         <i class="pi pi-arrow-right"></i>
       </a>
     </div>

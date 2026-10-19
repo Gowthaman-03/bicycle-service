@@ -3,17 +3,17 @@
     <div class="services-layout">
       <!-- Left Column: Header & CTA -->
       <div class="services-sidebar" appScrollReveal="fade-right">
-        <p class="section-eyebrow">WHAT WE DO</p>
+        <p class="section-eyebrow">WORKSHOP DISCIPLINES</p>
         <h2 id="services-heading" class="section-title">
-          OUR <span class="text-orange">SERVICES</span>
+          FLAGSHIP <span class="text-orange">SERVICES</span>
         </h2>
         <p class="section-subtitle">
-          From basic tune-ups to complex repairs, we provide complete bicycle care under one roof.
+          From preventative maintenance to Olympic &amp; National-tier race preparation, every bicycle receives factory-grade precision.
         </p>
 
         <div class="services-action-wrap">
-          <a routerLink="/service" class="btn-secondary services-view-btn">
-            <span>VIEW ALL SERVICES</span>
+          <a routerLink="/service" class="btn-primary services-view-btn">
+            <span>EXPLORE ALL 17+ PACKAGES</span>
             <i class="pi pi-arrow-right"></i>
           </a>
         </div>
@@ -22,19 +22,35 @@
       <!-- Right Column: 4 Service Cards Grid -->
       <div class="services-cards-grid">
         @for (card of serviceCards; track card.id; let idx = $index) {
-          <a
-            [routerLink]="card.link"
+          <div
             class="service-feature-card blueprint-card"
             appScrollReveal="fade-up"
             [delay]="idx * 120"
           >
-            <div class="card-icon-circle">
-              <i [class]="card.icon"></i>
+            <div class="card-telemetry-header">
+              <span class="telemetry-tag">{{ card.tag }}</span>
+              <div class="card-icon-circle">
+                <i [class]="card.icon"></i>
+              </div>
             </div>
+
             <h3 class="card-title">{{ card.title }}</h3>
             <p class="card-desc">{{ card.description }}</p>
+
+            <div class="card-meta-row">
+              <span class="meta-item"><i class="pi pi-clock"></i> {{ card.duration }}</span>
+              <span class="meta-price">From ₹{{ card.price }}</span>
+            </div>
+
+            <div class="card-actions">
+              <a [routerLink]="['/appointment']" [queryParams]="{ service: card.serviceId }" class="card-book-link">
+                <span>Book This Service</span>
+                <i class="pi pi-arrow-right"></i>
+              </a>
+            </div>
+
             <div class="card-corner-glow"></div>
-          </a>
+          </div>
         }
       </div>
     </div>

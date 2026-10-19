@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../../common/directives/scroll-reveal.directive';
 
-interface ServiceCardItem {
+export interface FeaturedServiceItem {
   id: string;
+  tag: string;
   icon: string;
   title: string;
   description: string;
-  link: string;
+  duration: string;
+  price: number;
+  serviceId: string;
 }
 
 @Component({
@@ -18,34 +21,46 @@ interface ServiceCardItem {
   styleUrl: './services.scss',
 })
 export class Services {
-  serviceCards: ServiceCardItem[] = [
+  serviceCards: FeaturedServiceItem[] = [
     {
-      id: 'repair',
+      id: 'maint',
+      tag: '01 // PRECISION',
       icon: 'pi pi-wrench',
-      title: 'BIKE REPAIR',
-      description: 'Brakes, gears, wheels and more.',
-      link: '/appointment',
+      title: 'General Precision Service',
+      description: 'Complete 24-point safety audit, precision brake alignment, and micro-gap gear indexing.',
+      duration: '2 - 3 Hours',
+      price: 499,
+      serviceId: 'srv-01',
     },
     {
-      id: 'tune-up',
-      icon: 'pi pi-cog',
-      title: 'FULL TUNE-UP',
-      description: 'Complete inspection and adjustment.',
-      link: '/appointment',
+      id: 'susp',
+      tag: '02 // SUSPENSION',
+      icon: 'pi pi-sliders-h',
+      title: 'Suspension & Damper Lab',
+      description: '50h/200h fork and rear shock service, damper bleed, wiper seal renewal, and custom sag tuning.',
+      duration: '1 Day',
+      price: 1499,
+      serviceId: 'srv-07',
     },
     {
-      id: 'service',
-      icon: 'pi pi-compass',
-      title: 'BIKE SERVICE',
-      description: 'Keep your bike in peak condition.',
-      link: '/appointment',
+      id: 'drive',
+      tag: '03 // DRIVETRAIN',
+      icon: 'pi pi-sync',
+      title: 'Ultrasonic Drivetrain Tune',
+      description: 'Full teardown, ultrasonic solvent degreasing, chain wear check, and electronic shifting diagnostics.',
+      duration: '1.5 Hours',
+      price: 599,
+      serviceId: 'srv-03',
     },
     {
-      id: 'performance',
+      id: 'race',
+      tag: '04 // RACE PREP',
       icon: 'pi pi-bolt',
-      title: 'PERFORMANCE',
-      description: 'Upgrade for a better ride.',
-      link: '/appointment',
+      title: 'Performance & Race Service',
+      description: 'Uncompromising race-day setup, wheel precision truing, bearing optimization, and torque validation.',
+      duration: '4 Hours',
+      price: 1799,
+      serviceId: 'srv-06',
     },
   ];
 }

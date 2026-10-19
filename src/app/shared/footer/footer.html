@@ -1,20 +1,18 @@
 <footer id="contact" class="footer" role="contentinfo">
-  <!-- <div class="footer-blueprint-bg" aria-hidden="true"></div> -->
-
   <div class="container">
     <div class="footer-top-grid">
       <!-- Column 1: Brand & Bio -->
       <div class="footer-brand-col">
-        <a href="/" class="footer-logo" aria-label="Cycle Service Home">
-          <img src="assets/images/logo.png" alt="FreeWheel Bicycle Service Center" />
+        <a routerLink="/" class="footer-logo" aria-label="Freewheel Factory Home">
+          <img src="assets/images/logo.png" alt="Freewheel Factory — International Bicycle Service & Performance Centre" />
         </a>
         <p class="footer-bio">
-          Salem’s premier bicycle service center. Combining professional mechanics, authentic spares, and factory tools
-          to keep every ride performing at its peak.
+          International-standard bicycle service &amp; performance centre. Engineered by national downhill champions and manufacturing engineers with factory tooling, authentic spares, and zero-tolerance precision.
         </p>
         <div class="footer-badges">
           <span class="f-badge"><i class="pi pi-check-circle"></i> Shimano Certified</span>
           <span class="f-badge"><i class="pi pi-shield"></i> Park Tool Equipped</span>
+          <span class="f-badge"><i class="pi pi-sliders-h"></i> Suspension Lab</span>
         </div>
       </div>
 
@@ -22,34 +20,36 @@
       <div class="footer-col">
         <h3 class="footer-heading">Navigation</h3>
         <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Our Workshop</a></li>
-          <li><a href="#services">Service Packages</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#gallery">Workshop Gallery</a></li>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/service">Services Catalogue</a></li>
+          <li><a routerLink="/" [fragment]="'how-it-works'">Service Workflow</a></li>
+          <li><a routerLink="/" [fragment]="'about'">Founders &amp; Pedigree</a></li>
+          <li><a routerLink="/" [fragment]="'why-us'">Workshop Standards</a></li>
+          <li><a routerLink="/appointment">Book Service Appointment</a></li>
         </ul>
       </div>
 
       <!-- Column 3: Specialized Services -->
       <div class="footer-col">
-        <h3 class="footer-heading">Services</h3>
+        <h3 class="footer-heading">Core Disciplines</h3>
         <ul class="footer-links">
-          <li><a routerLink="/appointment">Bike Repair</a></li>
-          <li><a routerLink="/appointment">Full Tune-Up</a></li>
-          <li><a routerLink="/appointment">Bike Service</a></li>
-          <li><a routerLink="/appointment">Performance Upgrades</a></li>
-          <li><a routerLink="/service">All 20+ Services &rarr;</a></li>
+          <li><a routerLink="/service">General Precision Service</a></li>
+          <li><a routerLink="/service">Suspension Fork &amp; Damper Overhaul</a></li>
+          <li><a routerLink="/service">Ultrasonic Drivetrain Tune</a></li>
+          <li><a routerLink="/service">Hydraulic Brake Calibration</a></li>
+          <li><a routerLink="/service">Race-Day Prep &amp; 3D Bike Fit</a></li>
+          <li><a routerLink="/service" class="view-all-link">Explore All 17+ Packages &rarr;</a></li>
         </ul>
       </div>
 
       <!-- Column 4: Contact & Workshop Hours -->
       <div class="footer-col contact-col">
-        <h3 class="footer-heading">Visit & Contact</h3>
+        <h3 class="footer-heading">Workshop Centre</h3>
         <div class="contact-info-list">
           <div class="contact-entry">
             <i class="pi pi-map-marker"></i>
             <div>
-              <strong>Workshop Location</strong>
+              <strong>Facility Location</strong>
               <span>Salem, Tamil Nadu, India</span>
             </div>
           </div>
@@ -57,7 +57,7 @@
           <div class="contact-entry">
             <i class="pi pi-phone"></i>
             <div>
-              <strong>Direct Line</strong>
+              <strong>Workshop Direct Line</strong>
               <a href="tel:+919999999999">+91 99999 99999</a>
             </div>
           </div>
@@ -65,7 +65,7 @@
           <div class="contact-entry">
             <i class="pi pi-clock"></i>
             <div>
-              <strong>Workshop Hours</strong>
+              <strong>Operating Hours</strong>
               <span>Mon – Sat: 9:00 AM – 8:00 PM</span>
             </div>
           </div>
@@ -95,20 +95,18 @@
     <!-- Bottom Bar with prompt menu line & copyright -->
     <div class="footer-bottom-bar">
       <p class="copyright">
-        &copy; 2025 FreeWheel Bicycle Service Center. All rights reserved.
+        &copy; 2026 Freewheel Factory — International Bicycle Service &amp; Performance Centre. All rights reserved.
       </p>
       <div class="footer-nav-bottom">
-        <a href="#home">HOME</a>
+        <a routerLink="/">HOME</a>
         <span class="bullet">&bull;</span>
-        <a href="#about">ABOUT</a>
+        <a routerLink="/service">SERVICES</a>
         <span class="bullet">&bull;</span>
-        <a href="#services">SERVICES</a>
+        <a routerLink="/" [fragment]="'how-it-works'">WORKFLOW</a>
         <span class="bullet">&bull;</span>
-        <a href="#how-it-works">HOW IT WORKS</a>
+        <a routerLink="/" [fragment]="'about'">PEDIGREE</a>
         <span class="bullet">&bull;</span>
-        <a href="#gallery">GALLERY</a>
-        <span class="bullet">&bull;</span>
-        <a href="#contact">CONTACT</a>
+        <a routerLink="/appointment">BOOKING</a>
       </div>
     </div>
   </div>

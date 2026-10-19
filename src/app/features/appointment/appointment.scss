@@ -118,6 +118,40 @@
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
 }
 
+.selected-service-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 90, 0, 0.08);
+  border: 1px solid rgba(255, 90, 0, 0.35);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+
+  i {
+    font-size: 20px;
+    color: var(--primary);
+  }
+
+  .banner-tag {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .banner-name {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+  }
+}
+
 .card-heading {
   display: flex;
   justify-content: space-between;

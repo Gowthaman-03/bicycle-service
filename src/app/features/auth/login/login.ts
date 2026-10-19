@@ -21,7 +21,6 @@ import { AuthService } from '../auth.service';
     CheckboxModule,
   ],
   templateUrl: './login.html',
-  styleUrl: './login.scss',
 })
 export class LoginComponent {
   router = inject(Router);
@@ -75,3 +74,6 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 }
+
+export { LoginComponent as Login };
+

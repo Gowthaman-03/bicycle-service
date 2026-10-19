@@ -10,6 +10,7 @@ export class Appointmentservice {
   configService = inject(AppConfigService);
 
   bookAppointment(data: any) {
-    return this.http.post(this.configService.AuthUrl + '/api/demo-requests', data);
+    const baseUrl = (this.configService.AuthUrl || '').replace(/\/+$/, '');
+    return this.http.post(`${baseUrl}/api/demo-requests`, data);
   }
 }

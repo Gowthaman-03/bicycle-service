@@ -1,130 +1,210 @@
-<section class="service-grid">
-  <section class="services-hero">
+<main class="services-page">
+  <!-- SERVICES HERO -->
+  <section class="services-hero" aria-label="Services Introduction">
     <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          PRECISION ENGINEERING &amp; WORKSHOP LAB
+        </span>
 
-    <div class="hero-content">
-      <span class="eyebrow"> PROFESSIONAL BICYCLE CARE </span>
+        <h1>
+          Every Ride Deserves
+          <span class="text-orange">Expert Care.</span>
+        </h1>
 
-      <h1>
-        Every Ride Deserves
-        <span>Expert Care.</span>
-      </h1>
-
-      <p>
-        From routine maintenance to professional race preparation, we provide complete bicycle
-        servicing for every rider.
-      </p>
-    </div>
-  </section>
-
-  <!-- FEATURED SERVICES -->
-
-  <section class="featured-section">
-    <div class="section-heading">
-      <span>OUR EXPERTISE</span>
-
-      <h2>Featured Services</h2>
-
-      <p>Professional services designed to keep your bicycle performing at its best.</p>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-card" *ngFor="let service of services" [class.hidden]="!service.featured">
-        <div class="service-number">
-          {{ service.number }}
-        </div>
-
-        <i [class]="service.icon" class="service-icon"></i>
-
-        <h3>
-          {{ service.title }}
-        </h3>
-
-        <p>
-          {{ service.description }}
+        <p class="hero-lead">
+          From routine preventative overhauls to Olympic and National-tier race preparation, suspension damper calibrations, and dynamic bike fitting.
         </p>
 
-        <!-- <button class="service-link">
-          Explore Service
-          <i class="pi pi-arrow-right"></i>
-        </button> -->
+        <div class="hero-actions">
+          <a routerLink="/appointment" class="btn-primary hero-cta-btn">
+            <span>Book Service Appointment</span>
+            <i class="pi pi-arrow-right"></i>
+          </a>
+          <a href="#catalogue" class="btn-secondary hero-scroll-btn">
+            <span>Explore 17+ Packages</span>
+            <i class="pi pi-angle-down"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ALL SERVICES -->
-
-  <section class="all-services">
-    <div class="section-heading">
-      <span>COMPLETE SERVICE MENU</span>
-
-      <h2>Explore All Services</h2>
-
-      <p>Select a category to find the right service for your bicycle.</p>
-    </div>
-
-    <!-- CATEGORY FILTER -->
-
-    <div class="service-filters">
-      <button *ngFor="let category of categories" (click)="selectCategory(category)"
-        [class.active]="selectedCategory === category">
-        {{ category }}
-      </button>
-    </div>
-
-    <!-- SERVICES GRID -->
-
-    <div class="services-grid">
-      <article class="service-card" *ngFor="let service of filteredServices">
-        <div class="card-top">
-          <span class="service-number">
-            {{ service.number }}
-          </span>
-
-          <i [class]="service.icon" class="service-icon"></i>
-        </div>
-
-        <div class="service-category">
-          {{ service.category }}
-        </div>
-
-        <h3>
-          {{ service.title }}
-        </h3>
-
-        <p>
-          {{ service.description }}
+  <!-- FEATURED SERVICES -->
+  <section class="featured-section section" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-eyebrow">WORKSHOP LAB HIGHLIGHTS</span>
+        <h2 id="featured-heading" class="section-title">
+          Featured <span class="text-orange">Packages</span>
+        </h2>
+        <p class="section-subtitle mx-auto">
+          Our core multi-point overhauls, calibrated to meet the demands of everyday riders and competitive athletes alike.
         </p>
+      </div>
 
-        <!-- <div class="card-footer">
-          <button>
-            View Details
-            <i class="pi pi-arrow-up-right"></i>
-          </button>
-        </div> -->
-      </article>
+      <div class="featured-grid">
+        <div class="featured-card blueprint-card" *ngFor="let service of featuredServices">
+          <div class="card-telemetry">
+            <span class="flagship-badge">FLAGSHIP PACKAGE</span>
+            <span class="service-code">{{ service.code }}</span>
+          </div>
+
+          <div class="card-header-row">
+            <div class="service-icon-circle">
+              <i [class]="service.icon"></i>
+            </div>
+            <span class="service-category-tag">{{ service.category }}</span>
+          </div>
+
+          <h3 class="card-title">{{ service.name }}</h3>
+          <p class="card-description">{{ service.description }}</p>
+
+          <div class="card-checkpoints-box" *ngIf="service.includedCheckpoints?.length">
+            <span class="checkpoints-title">INCLUDED IN PACKAGE:</span>
+            <ul class="checkpoints-list">
+              <li *ngFor="let cp of service.includedCheckpoints.slice(0, 3)">
+                <i class="pi pi-check"></i>
+                <span>{{ cp }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-meta-bar">
+            <div class="meta-duration">
+              <i class="pi pi-clock"></i>
+              <span>{{ service.estimatedDuration }}</span>
+            </div>
+            <div class="meta-price">
+              <small>Starting</small>
+              <strong>₹{{ service.startingPrice }}</strong>
+            </div>
+          </div>
+
+          <div class="card-footer-action">
+            <a
+              [routerLink]="['/appointment']"
+              [queryParams]="{ service: service.id, name: service.name }"
+              class="btn-primary card-book-btn"
+            >
+              <span>Book This Package</span>
+              <i class="pi pi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ALL SERVICES CATALOGUE -->
+  <section id="catalogue" class="all-services section" aria-labelledby="all-services-heading">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-eyebrow">COMPLETE SERVICE MENU</span>
+        <h2 id="all-services-heading" class="section-title">
+          Explore All <span class="text-orange">Services</span>
+        </h2>
+        <p class="section-subtitle mx-auto">
+          Filter by category or inspect individual packages with transparent pricing, estimated turnaround, and included inspection points.
+        </p>
+      </div>
 
-  <section class="services-cta">
-    <div class="cta-content">
-      <span>READY TO RIDE?</span>
+      <!-- CATEGORY FILTER PILLS -->
+      <div class="service-filters" role="tablist" aria-label="Service Categories">
+        <button
+          *ngFor="let category of categories"
+          type="button"
+          (click)="selectCategory(category)"
+          [class.active]="selectedCategory === category"
+          class="filter-pill"
+          role="tab"
+          [attr.aria-selected]="selectedCategory === category"
+        >
+          <span class="pill-name">{{ category }}</span>
+          <span class="pill-count">{{ getCategoryCount(category) }}</span>
+        </button>
+      </div>
 
-      <h2>
-        Give Your Bicycle
-        <br />
-        The Care It Deserves.
-      </h2>
+      <!-- SERVICES GRID -->
+      <div class="services-grid">
+        <article class="service-card blueprint-card" *ngFor="let service of filteredServices">
+          <div class="card-top">
+            <div class="card-badges">
+              <span class="service-code">{{ service.code }}</span>
+              <span class="service-cat-badge">{{ service.category }}</span>
+            </div>
+            <div class="service-icon-box">
+              <i [class]="service.icon"></i>
+            </div>
+          </div>
 
-      <p>Book your professional bicycle service today.</p>
+          <h3 class="service-name">{{ service.name }}</h3>
+          <p class="service-desc">{{ service.description }}</p>
 
-      <a routerLink="/appointment" class="book-btn">
-        Book a Service
+          <!-- Checkpoints Preview -->
+          <div class="service-checkpoints" *ngIf="service.includedCheckpoints?.length">
+            <span class="cp-header">KEY CHECKPOINTS:</span>
+            <ul class="cp-list">
+              <li *ngFor="let cp of service.includedCheckpoints.slice(0, 2)">
+                <i class="pi pi-check-circle"></i>
+                <span>{{ cp }}</span>
+              </li>
+            </ul>
+          </div>
 
-        <i class="pi pi-arrow-right"></i>
-      </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-info">
+              <span class="service-duration">
+                <i class="pi pi-clock"></i>
+                {{ service.estimatedDuration }}
+              </span>
+              <span class="service-price">From ₹{{ service.startingPrice }}</span>
+            </div>
+
+            <a
+              [routerLink]="['/appointment']"
+              [queryParams]="{ service: service.id, name: service.name }"
+              class="service-book-action"
+            >
+              <span>Book</span>
+              <i class="pi pi-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
-</section>
+
+  <!-- CLOSING CTA -->
+  <section class="services-cta section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-banner blueprint-card">
+        <div class="cta-content">
+          <span class="section-eyebrow">UNCOMPROMISING STANDARDS</span>
+
+          <h2 id="cta-heading" class="cta-title">
+            Give Your Bicycle <span class="text-orange">The Care It Deserves.</span>
+          </h2>
+
+          <p class="cta-desc">
+            Book your service slot online in minutes. Certified mechanics, factory tooling, authentic spares, and transparent communication at every step.
+          </p>
+
+          <div class="cta-actions">
+            <a routerLink="/appointment" class="btn-primary cta-primary-btn">
+              <span>Book a Service Appointment</span>
+              <i class="pi pi-arrow-right"></i>
+            </a>
+
+            <a href="tel:+919999999999" class="btn-secondary cta-call-btn">
+              <i class="pi pi-phone"></i>
+              <span>Call Workshop: +91 99999 99999</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

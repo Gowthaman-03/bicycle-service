@@ -22,6 +22,16 @@
 
   <section class="booking-layout">
     <div class="booking-card">
+      @if (selectedServiceName) {
+        <div class="selected-service-banner">
+          <i class="pi pi-check-circle"></i>
+          <div>
+            <span class="banner-tag">PRE-SELECTED SERVICE</span>
+            <strong class="banner-name">{{ selectedServiceName }}</strong>
+          </div>
+        </div>
+      }
+
       <div class="card-heading">
         <div>
           <span>01</span>

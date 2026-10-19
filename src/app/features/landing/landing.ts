@@ -16,7 +16,6 @@ import { Inage } from './components/inage/inage';
     HowItWorks,
     About,
     WhyUs,
-    Gallery,
     BookingCta
   ],
   templateUrl: './landing.html',

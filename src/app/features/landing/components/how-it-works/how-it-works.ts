@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ScrollRevealDirective } from '../../../../common/directives/scroll-reveal.directive';
 
-interface Step {
+export interface ProcessStep {
   step: string;
+  phase: string;
   title: string;
   icon: string;
   description: string;
@@ -16,24 +17,34 @@ interface Step {
   styleUrl: './how-it-works.scss',
 })
 export class HowItWorks {
-  steps: Step[] = [
+  steps: ProcessStep[] = [
     {
       step: '01',
-      title: 'Book Appointment',
-      icon: 'pi pi-calendar',
-      description: 'Choose date and time that works for you.',
+      phase: 'INTAKE',
+      title: 'Book & Specify',
+      icon: 'pi pi-calendar-plus',
+      description: 'Select your bike category, service needs, and preferred slot online or via direct WhatsApp.',
     },
     {
       step: '02',
-      title: 'Service & Repair',
-      icon: 'pi pi-wrench',
-      description: 'Our experts get to work on your bike.',
+      phase: 'DIAGNOSTICS',
+      title: 'Inspection & Quote',
+      icon: 'pi pi-search',
+      description: '30-point condition audit, digital photo check, and itemized estimate before any wrench turns.',
     },
     {
       step: '03',
-      title: 'Ride Again',
-      icon: 'pi pi-check',
-      description: 'Pick up your bike and hit the road.',
+      phase: 'OVERHAUL',
+      title: 'Precision Calibration',
+      icon: 'pi pi-wrench',
+      description: 'Ultrasonic cleaning, hydraulic bleeding, and bearing overhaul torqued strictly to manufacturer spec.',
+    },
+    {
+      step: '04',
+      phase: 'DELIVERY',
+      title: 'Quality Check & Ride',
+      icon: 'pi pi-check-circle',
+      description: 'Dynamic load test ride, torque verification sign-off, and digital service health record.',
     },
   ];
 }
