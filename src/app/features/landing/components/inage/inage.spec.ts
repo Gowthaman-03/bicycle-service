@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideRouter } from '@angular/router';
 import { Inage } from './inage';
 
 describe('Inage', () => {
@@ -8,7 +9,8 @@ describe('Inage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Inage]
+      imports: [Inage],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 

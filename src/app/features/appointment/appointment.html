@@ -1,24 +1,51 @@
 <main class="appointment-page">
   <section class="appointment-header">
     <div>
-      <span class="eyebrow">BIKE SERVICE</span>
+      <span class="eyebrow">
+        <i class="pi pi-wrench"></i>
+        FREEWHEEL FACTORY WORKSHOP INTAKE
+      </span>
 
       <h1>
-        Book your
-        <span>service.</span>
+        Book Your
+        <span class="text-orange">Service Appointment.</span>
       </h1>
 
       <p>
-        Keep your ride in perfect condition. Choose your bike, service and preferred appointment
-        time.
+        International-standard bicycle servicing and suspension lab calibrations. Choose your bike discipline, required package, and preferred appointment time.
       </p>
     </div>
 
     <div class="header-badge">
-      <i class="pi pi-calendar"></i>
-      <span>Easy Booking</span>
+      <i class="pi pi-calendar-plus"></i>
+      <span>Zero-Wait Intake</span>
     </div>
   </section>
+
+  <!-- SUCCESS NOTIFICATION MODAL -->
+  @if (showNotification) {
+    <div class="appointment-modal-backdrop" (click)="closeNotification()">
+      <div class="appointment-modal-card" (click)="$event.stopPropagation()">
+        <div class="modal-icon-circle">
+          <i class="pi pi-check"></i>
+        </div>
+        <h3>Booking Request Initiated!</h3>
+        <p>
+          Your appointment request for <strong>{{ selectedServiceName }}</strong> has been prepared.
+        </p>
+        @if (whatsAppUrl) {
+          <div class="modal-whatsapp-box">
+            <p>If WhatsApp didn't open automatically, click below to dispatch your details to our workshop master technician directly:</p>
+            <a [href]="whatsAppUrl" target="_blank" class="btn-whatsapp-dispatch">
+              <i class="pi pi-whatsapp"></i>
+              <span>Dispatch via WhatsApp</span>
+            </a>
+          </div>
+        }
+        <button type="button" class="btn-modal-close" (click)="closeNotification()">Close Window</button>
+      </div>
+    </div>
+  }
 
   <section class="booking-layout">
     <div class="booking-card">
@@ -32,110 +59,194 @@
         </div>
       }
 
-      <div class="card-heading">
-        <div>
-          <span>01</span>
-          <h2>Your Details</h2>
+      <form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
+        <!-- STEP 1: RIDER DETAILS -->
+        <div class="card-heading">
+          <div>
+            <span>01</span>
+            <h2>Rider Contact Details</h2>
+          </div>
+          <i class="pi pi-user"></i>
         </div>
 
-        <i class="pi pi-user"></i>
-      </div>
-
-      <form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
         <!-- Name -->
         <div class="form-group">
-          <label for="name">Full Name</label>
-
+          <label for="name">Full Name *</label>
           <div class="input-wrapper">
             <i class="pi pi-user"></i>
-
-            <input id="name" type="text" formControlName="name" placeholder="Enter your name" />
+            <input id="name" type="text" formControlName="name" placeholder="Enter your full name" />
           </div>
-
           @if (appointmentForm.get('name')?.touched && appointmentForm.get('name')?.invalid) {
-            <small class="error"> Please enter your name. </small>
+            <small class="error">Please enter your full name.</small>
           }
         </div>
 
-        <!-- Phone -->
-        <div class="form-group">
-          <label for="phoneNumber">Phone Number</label>
-
-          <div class="input-wrapper">
-            <i class="pi pi-phone"></i>
-
-            <input
-              id="phoneNumber"
-              type="tel"
-              formControlName="phoneNumber"
-              placeholder="Enter your phone number"
-              maxlength="10"
-            />
+        <!-- Phone & Email Grid -->
+        <div class="form-row-2">
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number (10 digits) *</label>
+            <div class="input-wrapper">
+              <i class="pi pi-phone"></i>
+              <input
+                id="phoneNumber"
+                type="tel"
+                formControlName="phoneNumber"
+                placeholder="10-digit mobile number"
+                maxlength="10"
+              />
+            </div>
+            @if (appointmentForm.get('phoneNumber')?.touched && appointmentForm.get('phoneNumber')?.invalid) {
+              <small class="error">Please enter a valid 10-digit mobile number.</small>
+            }
           </div>
 
-          @if (
-            appointmentForm.get('phoneNumber')?.touched &&
-            appointmentForm.get('phoneNumber')?.invalid
-          ) {
-            <small class="error"> Please enter a valid phone number. </small>
-          }
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <div class="input-wrapper">
+              <i class="pi pi-envelope"></i>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="rider@example.com"
+              />
+            </div>
+            @if (appointmentForm.get('email')?.touched && appointmentForm.get('email')?.invalid) {
+              <small class="error">Please enter a valid email address.</small>
+            }
+          </div>
         </div>
 
-        <!-- Email -->
-        <div class="form-group">
-          <label for="email">Email Address</label>
+        <!-- STEP 2: BICYCLE DETAILS -->
+        <div class="card-heading mt-6">
+          <div>
+            <span>02</span>
+            <h2>Bicycle Information</h2>
+          </div>
+          <i class="pi pi-compass"></i>
+        </div>
 
-          <div class="input-wrapper">
-            <i class="pi pi-envelope"></i>
-
-            <input
-              id="email"
-              type="email"
-              formControlName="email"
-              placeholder="Enter your email address"
-            />
+        <div class="form-row-2">
+          <!-- Bike Type Dropdown -->
+          <div class="form-group">
+            <label for="bikeType">Bicycle Discipline *</label>
+            <div class="input-wrapper select-wrapper">
+              <i class="pi pi-tag"></i>
+              <select id="bikeType" formControlName="bikeType">
+                @for (type of bikeTypes; track type) {
+                  <option [value]="type">{{ type }}</option>
+                }
+              </select>
+            </div>
           </div>
 
-          @if (appointmentForm.get('email')?.touched && appointmentForm.get('email')?.invalid) {
-            <small class="error"> Please enter a valid email address. </small>
-          }
+          <!-- Bike Brand & Model -->
+          <div class="form-group">
+            <label for="bikeModel">Brand &amp; Model *</label>
+            <div class="input-wrapper">
+              <i class="pi pi-cog"></i>
+              <input
+                id="bikeModel"
+                type="text"
+                formControlName="bikeModel"
+                placeholder="e.g. Trek Slash 8 / Specialized Tarmac"
+              />
+            </div>
+            @if (appointmentForm.get('bikeModel')?.touched && appointmentForm.get('bikeModel')?.invalid) {
+              <small class="error">Please provide your bike brand and model.</small>
+            }
+          </div>
         </div>
 
-        <!-- Address -->
+        <!-- STEP 3: SERVICE & SCHEDULE -->
+        <div class="card-heading mt-6">
+          <div>
+            <span>03</span>
+            <h2>Service Package &amp; Date</h2>
+          </div>
+          <i class="pi pi-calendar"></i>
+        </div>
+
+        <div class="form-row-2">
+          <!-- Service Package Select -->
+          <div class="form-group">
+            <label for="serviceId">Required Service Package *</label>
+            <div class="input-wrapper select-wrapper">
+              <i class="pi pi-sliders-h"></i>
+              <select id="serviceId" formControlName="serviceId">
+                @for (srv of services; track srv.id) {
+                  <option [value]="srv.id">
+                    {{ srv.name }} (From ₹{{ srv.startingPrice }})
+                  </option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <!-- Appointment Date -->
+          <div class="form-group">
+            <label for="appointmentDate">Preferred Service Date *</label>
+            <div class="input-wrapper">
+              <i class="pi pi-calendar"></i>
+              <input
+                id="appointmentDate"
+                type="date"
+                formControlName="appointmentDate"
+                [min]="today"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Address / Drop-off Location -->
         <div class="form-group">
           <div class="label-row">
-            <label for="address">Address</label>
+            <label for="address">Drop-off Address or Pick-up Location</label>
             <span>Optional</span>
           </div>
-
           <div class="textarea-wrapper">
             <i class="pi pi-map-marker"></i>
-
             <textarea
               id="address"
-              rows="4"
+              rows="2"
               formControlName="address"
-              placeholder="Enter your address"
+              placeholder="Provide pickup address or specify 'In-Store Drop Off'"
             ></textarea>
           </div>
         </div>
 
-        <!-- Submit -->
+        <!-- Notes / Problem Description -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="notes">Diagnosed Issues or Special Requirements</label>
+            <span>Optional</span>
+          </div>
+          <div class="textarea-wrapper">
+            <i class="pi pi-file-edit"></i>
+            <textarea
+              id="notes"
+              rows="2"
+              formControlName="notes"
+              placeholder="e.g. Rear brake spongy, fork needs 50hr service, unusual BB noise under load"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
         <button
           type="submit"
           class="book-button"
           [disabled]="appointmentForm.invalid || isSubmitting"
         >
           @if (!isSubmitting) {
-            <span>Submit Details</span>
-          }
-
-          @if (isSubmitting) {
-            <span>Submitting...</span>
-          }
-
-          @if (!isSubmitting) {
+            <i class="pi pi-whatsapp"></i>
+            <span>Confirm &amp; Dispatch Intake</span>
             <i class="pi pi-arrow-right"></i>
+          } @else {
+            <i class="pi pi-spin pi-spinner"></i>
+            <span>Preparing Digital Job Card...</span>
           }
         </button>
       </form>
@@ -144,96 +255,82 @@
     <!-- SIDE SECTION -->
     <aside class="booking-side">
       <div class="orange-card">
-        <span class="side-label"> YOUR RIDE DESERVES IT </span>
+        <span class="side-label">PRECISION WORKSHOP PROMISE</span>
 
         <h2>
-          Ride more.
+          Engineered Care.
           <br />
-          <span>Worry less.</span>
+          <span>Zero Compromises.</span>
         </h2>
 
-        <p>Professional bicycle servicing from people who understand every part of your ride.</p>
+        <p>Led by National Champions and M.E. Manufacturing Engineers with factory calibration tooling and Shimano/SRAM authentic spares.</p>
 
         <div class="orange-line"></div>
 
         <div class="benefits">
           <div>
             <i class="pi pi-check-circle"></i>
-            <span>Professional service</span>
+            <span>Calibrated Torque Specs on All Bolts</span>
           </div>
-
           <div>
             <i class="pi pi-check-circle"></i>
-            <span>Experienced mechanics</span>
+            <span>Dedicated Suspension Damper Laboratory</span>
           </div>
-
           <div>
             <i class="pi pi-check-circle"></i>
-            <span>Service status tracking</span>
+            <span>Transparent WhatsApp Status Updates</span>
+          </div>
+          <div>
+            <i class="pi pi-check-circle"></i>
+            <span>Digital Pre-Service Condition Audit</span>
           </div>
         </div>
       </div>
 
-      <!-- USER SUMMARY -->
+      <!-- INTAKE SUMMARY CARD -->
       <div class="summary-card">
         <div class="summary-top">
-          <span>YOUR DETAILS</span>
-          <i class="pi pi-user"></i>
+          <span>INTAKE SUMMARY</span>
+          <i class="pi pi-file"></i>
         </div>
 
         <div class="summary-bike">
-          <i class="pi pi-user"></i>
-
+          <i class="pi pi-wrench"></i>
           <div>
-            <span>Name</span>
-
-            <strong>
-              {{ appointmentForm.get('name')?.value || 'Not entered' }}
-            </strong>
+            <span>Selected Service</span>
+            <strong>{{ selectedServiceName || 'General Service' }}</strong>
           </div>
         </div>
 
         <div class="summary-details">
           <div>
-            <span>Phone</span>
-
-            <strong>
-              {{ appointmentForm.get('phoneNumber')?.value || 'Not entered' }}
-            </strong>
+            <span>Rider</span>
+            <strong>{{ appointmentForm.get('name')?.value || 'Pending' }}</strong>
           </div>
-
           <div>
-            <span>Email</span>
-
-            <strong>
-              {{ appointmentForm.get('email')?.value || 'Not entered' }}
-            </strong>
+            <span>Contact</span>
+            <strong>{{ appointmentForm.get('phoneNumber')?.value || 'Pending' }}</strong>
           </div>
-
           <div>
-            <span>Address</span>
-
-            <strong>
-              {{ appointmentForm.get('address')?.value || 'Not provided' }}
-            </strong>
+            <span>Discipline</span>
+            <strong>{{ appointmentForm.get('bikeType')?.value }}</strong>
+          </div>
+          <div>
+            <span>Bike Model</span>
+            <strong>{{ appointmentForm.get('bikeModel')?.value || 'Not specified' }}</strong>
+          </div>
+          <div>
+            <span>Scheduled Date</span>
+            <strong>{{ appointmentForm.get('appointmentDate')?.value }}</strong>
           </div>
         </div>
 
         <div class="summary-footer">
-          <span>Ready to continue?</span>
-          <i class="pi pi-arrow-down"></i>
+          <span>Fast-Track Workshop Intake</span>
+          <i class="pi pi-shield"></i>
         </div>
       </div>
     </aside>
   </section>
 </main>
 
-<!-- <h1>Appointment Test</h1>
-
-<form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
-  <label> Cycle ID </label>
-
-  <input type="text" formControlName="CycleId" />
-
-  <button type="submit">Submit</button>
-</form> -->
