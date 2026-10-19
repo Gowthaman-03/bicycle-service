@@ -2,7 +2,6 @@
   display: block;
   background: #050505;
   color: #ffffff;
-  margin: 90px 0 0 0;
 }
 
 /* =========================
@@ -12,28 +11,22 @@
 .service-grid {
   display: flex;
   flex-direction: column;
-  margin: 90px 0 0 0;
+  margin: 0;
   z-index: 1;
-  background: #0d0d0d;
+  background: #060709;
 }
+
 .services-hero {
   position: relative;
-
-  min-height: 65vh;
-
+  min-height: 55vh;
   display: flex;
-
   align-items: center;
-
-  padding: 120px 8% 80px;
-
+  padding: 130px 8% 60px;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)),
-    url('/assets/images/services-hero.jpg');
-
+    linear-gradient(90deg, rgba(6, 7, 9, 0.95), rgba(6, 7, 9, 0.7)),
+    url('/assets/images/hero-bike-foreground.jpeg');
   z-index: 1;
   background-size: cover;
-
   background-position: center;
 }
 
@@ -381,11 +374,37 @@
   cursor: pointer;
 }
 
-.card-footer i {
-  margin-left: 10px;
+.card-footer,
+.featured-card-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-  z-index: 1;
-  color: #ff6a00;
+  .service-book-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+
+    i {
+      font-size: 11px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      color: #ffffff;
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
 }
 
 /* =========================
@@ -393,16 +412,13 @@
 ========================= */
 
 .services-cta {
-  padding: 140px 8%;
-
+  padding: 120px 8%;
   text-align: center;
   z-index: 1;
-
   background:
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('/assets/images/cta-bike.jpg');
-
+    linear-gradient(rgba(6, 7, 9, 0.85), rgba(6, 7, 9, 0.96)),
+    url('/assets/images/about-bike.jpeg');
   background-size: cover;
-
   background-position: center;
 }
 

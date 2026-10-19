@@ -1,84 +1,99 @@
 <section id="home" class="hero" aria-label="Hero Section">
-  <!-- Dark atmospheric background layer -->
-  <!-- <div class="hero-blue-bg" aria-hidden="true"></div> -->
+  <!-- Subtle Blueprint Grid Pattern -->
+  <div class="hero-grid-pattern" aria-hidden="true"></div>
 
-  <!-- Parallax Bike Blueprint Silhouette/Mask -->
-  <div class="hero-image" aria-hidden="true"></div>
+  <!-- Precision Technical Blueprint Graphic (Contained, No Mobile Overflow) -->
+  <div class="hero-blueprint-accent" aria-hidden="true">
+    <img src="assets/images/bi.png" alt="" class="blueprint-vector" loading="eager" />
+  </div>
 
-  <div class="hero-content">
-    <p class="hero-eyebrow">PROFESSIONAL BICYCLE SERVICE</p>
-
-    <h1 class="hero-title">
-      KEEP YOUR RIDE
-      <br />
-      <span class="text-orange">IN TOP SHAPE</span>
-    </h1>
-
-    <p class="hero-description">
-      Expert repairs, servicing and maintenance for bikes that are ready for every ride.
-    </p>
-
-    <div class="hero-actions">
-      <a routerLink="/appointment" class="hero-primary btn-primary">
-        <span>Book a Service</span>
-        <i class="pi pi-arrow-right"></i>
-      </a>
-
-      <a href="#services" class="hero-secondary btn-secondary">
-        <span>Explore Services</span>
-      </a>
-    </div>
-
-    <div class="hero-scroll">
-      <div class="mouse-icon">
-        <div class="mouse-wheel"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <div class="hero-eyebrow-badge">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="eyebrow-text">FREEWHEEL FACTORY // SALEM WORKSHOP</span>
       </div>
-      <span>SCROLL TO EXPLORE</span>
+
+      <h1 class="hero-title">
+        PRECISION BICYCLE SERVICE.<br />
+        <span class="text-orange">RACE-GRADE CARE.</span>
+      </h1>
+
+      <p class="hero-description">
+        Calibrated with national downhill championship pedigree and manufacturing engineering standards. Zero-tolerance torque accuracy, ultrasonic drivetrain cleans, and hydraulic suspension care for road, gravel, and MTB.
+      </p>
+
+      <div class="hero-specs-pill">
+        <span class="spec-tag"><i class="pi pi-check"></i> 0.1 Nm Torque Tolerance</span>
+        <span class="spec-sep" aria-hidden="true">•</span>
+        <span class="spec-tag"><i class="pi pi-sync"></i> Ultrasonic Degrease</span>
+        <span class="spec-sep" aria-hidden="true">•</span>
+        <span class="spec-tag"><i class="pi pi-clock"></i> 24h Turnaround</span>
+      </div>
+
+      <div class="hero-actions">
+        <a routerLink="/appointment" class="hero-primary btn-primary">
+          <span>Book a Service</span>
+          <i class="pi pi-arrow-right"></i>
+        </a>
+
+        <a href="#services" class="hero-secondary btn-secondary">
+          <span>Explore Services</span>
+          <i class="pi pi-angle-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>SCROLL TO EXPLORE</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- 4 Key Feature Highlights Bar -->
-<section class="hero-features-bar" aria-label="Key Advantages">
+<section class="hero-features-bar" aria-label="Workshop Advantages">
   <div class="container">
     <div class="features-bar-grid">
       <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="100">
         <div class="feature-icon-circle">
-          <i class="pi pi-wrench"></i>
+          <i class="pi pi-sliders-h"></i>
         </div>
         <div class="feature-bar-text">
-          <h4>EXPERT TECHNICIANS</h4>
-          <p>Skilled professionals with real cycling experience.</p>
+          <h4>TORQUE ACCURACY</h4>
+          <p>Zero-tolerance specs for carbon frames, cockpits & pivots.</p>
         </div>
       </div>
 
       <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="200">
         <div class="feature-icon-circle">
-          <i class="pi pi-shield"></i>
+          <i class="pi pi-sync"></i>
         </div>
         <div class="feature-bar-text">
-          <h4>QUALITY PARTS</h4>
-          <p>Genuine parts for longer performance.</p>
+          <h4>ULTRASONIC CLEAN</h4>
+          <p>Deep drivetrain bath removing micro-grit and friction.</p>
         </div>
       </div>
 
       <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="300">
         <div class="feature-icon-circle">
-          <i class="pi pi-clock"></i>
+          <i class="pi pi-bolt"></i>
         </div>
         <div class="feature-bar-text">
-          <h4>FAST SERVICE</h4>
-          <p>Get back on the road sooner.</p>
+          <h4>SUSPENSION & BRAKES</h4>
+          <p>Air-spring tuning, damper bleeds & hydraulic fluid flushes.</p>
         </div>
       </div>
 
       <div class="feature-bar-item" appScrollReveal="fade-up" [delay]="400">
         <div class="feature-icon-circle">
-          <i class="pi pi-compass"></i>
+          <i class="pi pi-whatsapp"></i>
         </div>
         <div class="feature-bar-text">
-          <h4>ALL BIKE TYPES</h4>
-          <p>Road, MTB, Hybrid, E-bike and more.</p>
+          <h4>WHATSAPP DISPATCH</h4>
+          <p>Direct technician communication & digital health report.</p>
         </div>
       </div>
     </div>

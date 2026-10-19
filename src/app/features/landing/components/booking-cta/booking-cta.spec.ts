@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideRouter } from '@angular/router';
 import { BookingCta } from './booking-cta';
 
 describe('BookingCta', () => {
@@ -8,9 +8,9 @@ describe('BookingCta', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BookingCta]
-    })
-    .compileComponents();
+      imports: [BookingCta],
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BookingCta);
     component = fixture.componentInstance;

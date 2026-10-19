@@ -1,40 +1,77 @@
 <section id="services" class="section services-section" aria-labelledby="services-heading">
   <div class="container">
     <div class="services-layout">
-      <!-- Left Column: Header & CTA -->
+      <!-- Left Column: Header & Context -->
       <div class="services-sidebar" appScrollReveal="fade-right">
-        <p class="section-eyebrow">WHAT WE DO</p>
+        <p class="section-eyebrow">FACTORY CARE PACKAGES</p>
         <h2 id="services-heading" class="section-title">
           OUR <span class="text-orange">SERVICES</span>
         </h2>
         <p class="section-subtitle">
-          From basic tune-ups to complex repairs, we provide complete bicycle care under one roof.
+          Calibrated to factory tolerances by national downhill racers and manufacturing engineers. From essential tune-ups to full suspension overhauls.
         </p>
+
+        <div class="services-guarantees">
+          <div class="guarantee-item">
+            <i class="pi pi-check-circle"></i>
+            <span>Upfront, transparent pricing with no hidden charges</span>
+          </div>
+          <div class="guarantee-item">
+            <i class="pi pi-check-circle"></i>
+            <span>Shimano & SRAM authorized torque specifications</span>
+          </div>
+          <div class="guarantee-item">
+            <i class="pi pi-check-circle"></i>
+            <span>Digital service log with mechanic notes via WhatsApp</span>
+          </div>
+        </div>
 
         <div class="services-action-wrap">
           <a routerLink="/service" class="btn-secondary services-view-btn">
-            <span>VIEW ALL SERVICES</span>
+            <span>VIEW ALL 20+ SERVICES</span>
             <i class="pi pi-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <!-- Right Column: 4 Service Cards Grid -->
+      <!-- Right Column: 4 Technical Service Cards Grid -->
       <div class="services-cards-grid">
         @for (card of serviceCards; track card.id; let idx = $index) {
-          <a
-            [routerLink]="card.link"
+          <article
             class="service-feature-card blueprint-card"
             appScrollReveal="fade-up"
             [delay]="idx * 120"
           >
-            <div class="card-icon-circle">
-              <i [class]="card.icon"></i>
+            <div class="card-header-row">
+              <div class="card-icon-circle">
+                <i [class]="card.icon"></i>
+              </div>
+              <span class="card-highlight-badge">{{ card.highlight }}</span>
             </div>
+
             <h3 class="card-title">{{ card.title }}</h3>
             <p class="card-desc">{{ card.description }}</p>
+
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">{{ card.duration }}</span>
+              </div>
+              <div class="meta-item price-item">
+                <span class="meta-label">Starting</span>
+                <span class="meta-value price-value">{{ card.price }}</span>
+              </div>
+            </div>
+
+            <div class="card-cta-row">
+              <a [routerLink]="card.link" class="btn-primary card-book-btn">
+                <span>Book This Service</span>
+                <i class="pi pi-arrow-right"></i>
+              </a>
+            </div>
+
             <div class="card-corner-glow"></div>
-          </a>
+          </article>
         }
       </div>
     </div>

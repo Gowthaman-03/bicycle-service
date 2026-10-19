@@ -44,10 +44,12 @@
           {{ service.description }}
         </p>
 
-        <!-- <button class="service-link">
-          Explore Service
-          <i class="pi pi-arrow-right"></i>
-        </button> -->
+        <div class="featured-card-footer">
+          <a routerLink="/appointment" class="service-book-cta">
+            <span>Book Service</span>
+            <i class="pi pi-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -96,12 +98,12 @@
           {{ service.description }}
         </p>
 
-        <!-- <div class="card-footer">
-          <button>
-            View Details
-            <i class="pi pi-arrow-up-right"></i>
-          </button>
-        </div> -->
+        <div class="card-footer">
+          <a routerLink="/appointment" class="service-book-cta">
+            <span>Book This Service</span>
+            <i class="pi pi-arrow-right"></i>
+          </a>
+        </div>
       </article>
     </div>
   </section>

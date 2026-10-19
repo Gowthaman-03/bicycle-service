@@ -5,22 +5,20 @@
   width: 100%;
   height: 84px;
   z-index: 9999;
-  background: transparent;
-  background-color: #0000005b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  background: rgba(6, 7, 9, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.35s ease;
 }
 
 .navbar.navbar-scrolled {
-  background: rgba(11, 11, 11, 0.577);
-  // background-image: url('/assets/images/herobg.png');
-  background-size: cover;
-  background-position: center top;
-  // backdrop-filter: blur(20px);
-  // -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 90, 0, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  background: rgba(6, 7, 9, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 90, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
 }
 
 .navbar-inner {
@@ -124,20 +122,31 @@
 
 .mobile-menu-button {
   display: none;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--primary);
+    background: rgba(255, 90, 0, 0.1);
+  }
 }
 
 /* Mobile Drawer Styling */
 :host ::ng-deep .custom-mobile-drawer {
-  background-color: #020e21 !important;
-  background-image: url('/assets/images/herobg.png') !important;
-  background-size: cover !important;
+  background-color: #080a0f !important;
   color: var(--text-primary) !important;
-  border-left: 1px solid var(--border-subtle) !important;
+  border-left: 1px solid rgba(255, 90, 0, 0.25) !important;
   width: min(320px, 85vw) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
 
   .p-drawer-header {
     padding: 20px 24px;
-    border-bottom: 1px solid rgba(43, 90, 153, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .drawer-header-brand .drawer-logo {

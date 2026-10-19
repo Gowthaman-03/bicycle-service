@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-interface Service {
+export interface Service {
   number: string;
   icon: string;
   title: string;
