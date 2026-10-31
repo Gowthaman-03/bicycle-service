@@ -1,30 +1,55 @@
 .booking-cta-section {
   position: relative;
   padding: 80px 0 100px;
+  background-color: var(--bg-void);
 }
 
 .booking-cta-banner {
-  background: rgba(14, 16, 22, 0.8);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 64px 48px;
+  padding: 72px 48px;
   position: relative;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: rgba(255, 90, 0, 0.4);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 90, 0, 0.12);
+  }
 }
 
-.cta-bg-glow {
+.cta-backdrop-layer {
   position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 90, 0, 0.12) 0%, transparent 70%);
+  inset: 0;
   pointer-events: none;
+  z-index: 1;
+
+  .cta-backdrop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.18;
+    filter: grayscale(100%) contrast(120%);
+  }
+
+  .cta-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(4, 6, 9, 0.7) 0%, rgba(4, 6, 9, 0.95) 100%);
+  }
+
+  .cta-accent-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 90, 0, 0.15) 0%, transparent 70%);
+  }
 }
 
 .cta-content-inner {
@@ -36,7 +61,7 @@
 
 .cta-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -46,12 +71,13 @@
 
   .text-orange {
     color: var(--primary);
+    text-shadow: 0 0 30px rgba(255, 90, 0, 0.4);
   }
 }
 
 .cta-description {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
   color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 36px;
@@ -61,22 +87,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
 
   .cta-btn {
-    padding: 16px 36px;
+    padding: 16px 38px;
     font-size: 13px;
+    letter-spacing: 0.1em;
+    box-shadow: 0 8px 24px rgba(255, 90, 0, 0.35);
   }
 
   .cta-call-btn {
     padding: 16px 32px;
     font-size: 13px;
+    letter-spacing: 0.1em;
   }
 }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
+  .booking-cta-section {
+    padding: 60px 0;
+  }
+
   .booking-cta-banner {
     padding: 48px 24px;
   }

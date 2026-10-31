@@ -9,9 +9,9 @@
     <!-- DESKTOP NAV -->
     <nav class="desktop-nav" aria-label="Main Navigation">
       <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/" [fragment]="'about'" class="nav-link">About</a>
       <a routerLink="/service" class="nav-link" routerLinkActive="active">Services</a>
-      <a routerLink="/" [fragment]="'how-it-works'" class="nav-link">Process</a>
-      <a routerLink="/" [fragment]="'about'" class="nav-link">Pedigree</a>
+      <a routerLink="/" [fragment]="'gallery'" class="nav-link">Gallery</a>
       <a routerLink="/" [fragment]="'why-us'" class="nav-link">Standards</a>
       <a routerLink="/" [fragment]="'contact'" class="nav-link">Contact</a>
 
@@ -47,17 +47,17 @@
       <i class="pi pi-home"></i>
       <span>Home</span>
     </a>
+    <a routerLink="/" [fragment]="'about'" (click)="closeMenu()" class="mobile-link">
+      <i class="pi pi-trophy"></i>
+      <span>About Freewheel Factory</span>
+    </a>
     <a routerLink="/service" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-wrench"></i>
       <span>Services Catalog (17+)</span>
     </a>
-    <a routerLink="/" [fragment]="'how-it-works'" (click)="closeMenu()" class="mobile-link">
-      <i class="pi pi-list-check"></i>
-      <span>Service Workflow</span>
-    </a>
-    <a routerLink="/" [fragment]="'about'" (click)="closeMenu()" class="mobile-link">
-      <i class="pi pi-trophy"></i>
-      <span>Founders & Pedigree</span>
+    <a routerLink="/" [fragment]="'gallery'" (click)="closeMenu()" class="mobile-link">
+      <i class="pi pi-images"></i>
+      <span>Workshop Gallery</span>
     </a>
     <a routerLink="/" [fragment]="'why-us'" (click)="closeMenu()" class="mobile-link">
       <i class="pi pi-shield"></i>

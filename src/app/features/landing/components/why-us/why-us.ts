@@ -19,31 +19,38 @@ export class WhyUs {
   benefits: TrustBenefit[] = [
     {
       number: '01',
-      icon: 'pi pi-user',
-      title: 'Professional Technicians',
+      icon: 'pi pi-sliders-h',
+      title: 'Professional Suspension Servicing',
       description:
-        'Mechanics with hands-on expertise across modern disc brakes, electronic shifting, and complex suspension architectures.',
+        'Dedicated damper laboratory for 50h/200h service, vacuum oil bleeds, wiper seal renewals, and rider-weight sag calibration.',
     },
     {
       number: '02',
-      icon: 'pi pi-shield',
-      title: 'Quality Service & Parts',
+      icon: 'pi pi-compass',
+      title: 'Precision Torque Calibration',
       description:
-        'We strictly use original factory components, high-load synthetic greases, and industry-standard precision tools.',
+        'Digital 0.1 Nm torque verification on every bolt, pivot bearing, and carbon clamping surface to eliminate fatigue risk.',
     },
     {
       number: '03',
-      icon: 'pi pi-search',
-      title: 'Transparent Process',
+      icon: 'pi pi-bolt',
+      title: 'Race-Grade Preparation',
       description:
-        'Upfront price estimates with itemized breakdowns. We only perform and charge for repairs you have approved.',
+        'Track-proven downhill and road tuning, electronic shifting diagnostics, and simulated dynamic load calibration.',
     },
     {
       number: '04',
-      icon: 'pi pi-clock',
-      title: 'Reliable Turnaround',
+      icon: 'pi pi-shield',
+      title: 'Experienced Technical Team',
       description:
-        'Fast scheduling and realistic completion deadlines so you can plan your rides and commute without delays.',
+        'Led by National Downhill Champions and M.E. Manufacturing Engineers with multi-year competitive and industry mastery.',
+    },
+    {
+      number: '05',
+      icon: 'pi pi-check-circle',
+      title: 'Quality-Focused Workmanship',
+      description:
+        'Zero-compromise authentic Shimano & SRAM spares, Park Tool equipment, itemized digital job cards, and transparent quotes.',
     },
   ];
 }

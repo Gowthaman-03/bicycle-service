@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from './components/hero/hero';
 import { Services } from './components/services/services';
 import { HowItWorks } from './components/how-it-works/how-it-works';
 import { About } from './components/about/about';
@@ -11,12 +12,14 @@ import { Inage } from './components/inage/inage';
   selector: 'app-landing',
   standalone: true,
   imports: [
-    Inage,
+    Hero,
     Services,
     HowItWorks,
     About,
     WhyUs,
-    BookingCta
+    Gallery,
+    BookingCta,
+    Inage
   ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',

@@ -7,33 +7,34 @@
 
 :root {
   /* Brand Accent Palette - Precision Racing Orange */
-  --primary: #ff5a00;
-  --primary-hover: #ff7426;
+  --primary: #FF5A00;
+  --primary-hover: #FF7026;
   --primary-dark: #d94700;
   --primary-glow: rgba(255, 90, 0, 0.35);
   --primary-soft: rgba(255, 90, 0, 0.12);
   --primary-border: rgba(255, 90, 0, 0.35);
 
-  /* Deep Technical Midnight & Charcoal Surfaces */
+  /* Deep Technical Midnight & Obsidian Surfaces */
   --bg-void: #040609;
-  --bg-surface: #070a12;
-  --bg-surface-elevated: #0d1322;
-  --bg-card: rgba(10, 15, 26, 0.82);
-  --bg-card-hover: rgba(16, 24, 40, 0.92);
-  --bg-glass: rgba(8, 12, 20, 0.85);
+  --bg-surface: #080C12;
+  --bg-surface-elevated: #101722;
+  --bg-card: #0A0F16;
+  --bg-card-hover: #121A28;
+  --bg-glass: rgba(10, 15, 22, 0.85);
 
   /* Typography Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A7B2;
+  --text-muted: #6B7280;
   --text-dim: #475569;
 
   /* Engineering Dividers & Technical Borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-medium: rgba(255, 255, 255, 0.16);
   --border-accent: rgba(255, 90, 0, 0.45);
 
   /* Typography Families */
+  --font-editorial: 'Instrument Serif', Georgia, serif;
   --font-display: 'Montserrat', -apple-system, sans-serif;
   --font-heading: 'Montserrat', -apple-system, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -71,20 +72,13 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   color-scheme: dark;
-  // background-color: var(--bg-main);
+  background-color: var(--bg-void);
 }
 
 body {
   margin: 0;
   padding: 0;
-  // background-color: #060709;
-  // background-image:
-  //   radial-gradient(circle at 50% 0%, rgba(255, 90, 0, 0.07) 0%, transparent 50%),
-  //   radial-gradient(circle at 90% 25%, rgba(255, 90, 0, 0.03) 0%, transparent 40%),
-  //   radial-gradient(circle at 10% 70%, rgba(255, 90, 0, 0.03) 0%, transparent 40%),
-  //   linear-gradient(180deg, #060709 0%, #090a0f 50%, #050608 100%);
-  // background-attachment: fixed;
-  // background: transparent !important;
+  background-color: var(--bg-void);
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 16px;
@@ -228,6 +222,15 @@ img {
 .section-title span,
 .section-title .text-orange {
   color: var(--primary);
+}
+
+.font-editorial,
+.editorial-italic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .section-subtitle {

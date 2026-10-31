@@ -2,27 +2,31 @@
   <div class="container">
     <div class="gallery-header" appScrollReveal="fade-up">
       <div>
-        <p class="section-eyebrow">THE WORKSHOP</p>
+        <p class="section-eyebrow">THE WORKSHOP &amp; LAB</p>
         <h2 id="gallery-heading" class="section-title">
           Craft In <span class="text-orange">Motion</span>
         </h2>
       </div>
       <p class="section-subtitle">
-        A glimpse inside our specialized workshop, diagnostic equipment, and completed builds.
+        A glimpse inside our specialized suspension laboratory, ultrasonic cleaning bays, and race-grade bicycle preparation.
       </p>
     </div>
 
     <div class="gallery-grid">
       @for (item of items; track item.title; let idx = $index) {
-        <div class="gallery-card" appScrollReveal="scale" [delay]="idx * 100">
+        <article class="gallery-card" appScrollReveal="fade-up" [delay]="idx * 100">
           <div class="gallery-image-wrap">
             <img [src]="item.image" [alt]="item.alt" loading="lazy" class="gallery-img" />
             <div class="gallery-overlay">
-              <div class="gallery-tag">{{ item.tag }}</div>
-              <h3 class="gallery-card-title">{{ item.title }}</h3>
+              <span class="gallery-tag">{{ item.tag }}</span>
+              <div class="gallery-card-content">
+                <h3 class="gallery-card-title">{{ item.title }}</h3>
+                <p class="gallery-card-subtitle">{{ item.subtitle }}</p>
+              </div>
             </div>
+            <div class="gallery-hover-border"></div>
           </div>
-        </div>
+        </article>
       }
     </div>
   </div>

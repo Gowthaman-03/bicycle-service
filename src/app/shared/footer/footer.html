@@ -21,9 +21,9 @@
         <h3 class="footer-heading">Navigation</h3>
         <ul class="footer-links">
           <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/" [fragment]="'about'">About Freewheel Factory</a></li>
           <li><a routerLink="/service">Services Catalogue</a></li>
-          <li><a routerLink="/" [fragment]="'how-it-works'">Service Workflow</a></li>
-          <li><a routerLink="/" [fragment]="'about'">Founders &amp; Pedigree</a></li>
+          <li><a routerLink="/" [fragment]="'gallery'">Workshop Gallery</a></li>
           <li><a routerLink="/" [fragment]="'why-us'">Workshop Standards</a></li>
           <li><a routerLink="/appointment">Book Service Appointment</a></li>
         </ul>
@@ -100,11 +100,11 @@
       <div class="footer-nav-bottom">
         <a routerLink="/">HOME</a>
         <span class="bullet">&bull;</span>
+        <a routerLink="/" [fragment]="'about'">ABOUT</a>
+        <span class="bullet">&bull;</span>
         <a routerLink="/service">SERVICES</a>
         <span class="bullet">&bull;</span>
-        <a routerLink="/" [fragment]="'how-it-works'">WORKFLOW</a>
-        <span class="bullet">&bull;</span>
-        <a routerLink="/" [fragment]="'about'">PEDIGREE</a>
+        <a routerLink="/" [fragment]="'gallery'">GALLERY</a>
         <span class="bullet">&bull;</span>
         <a routerLink="/appointment">BOOKING</a>
       </div>

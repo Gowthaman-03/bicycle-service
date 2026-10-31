@@ -1,58 +1,80 @@
 <section id="services" class="section services-section" aria-labelledby="services-heading">
   <div class="container">
-    <div class="services-layout">
-      <!-- Left Column: Header & CTA -->
-      <div class="services-sidebar" appScrollReveal="fade-right">
+    <div class="services-header-split" appScrollReveal="fade-up">
+      <div>
         <p class="section-eyebrow">WORKSHOP DISCIPLINES</p>
         <h2 id="services-heading" class="section-title">
           FLAGSHIP <span class="text-orange">SERVICES</span>
         </h2>
-        <p class="section-subtitle">
-          From preventative maintenance to Olympic &amp; National-tier race preparation, every bicycle receives factory-grade precision.
-        </p>
-
-        <div class="services-action-wrap">
-          <a routerLink="/service" class="btn-primary services-view-btn">
-            <span>EXPLORE ALL 17+ PACKAGES</span>
-            <i class="pi pi-arrow-right"></i>
-          </a>
-        </div>
       </div>
+      <div class="header-right">
+        <p class="section-subtitle">
+          From preventative maintenance to Olympic and National-tier race preparation, every bicycle receives factory-grade precision.
+        </p>
+        <a routerLink="/service" class="btn-secondary services-catalog-btn">
+          <span>EXPLORE ALL 17+ PACKAGES</span>
+          <i class="pi pi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
-      <!-- Right Column: 4 Service Cards Grid -->
-      <div class="services-cards-grid">
-        @for (card of serviceCards; track card.id; let idx = $index) {
-          <div
-            class="service-feature-card blueprint-card"
-            appScrollReveal="fade-up"
-            [delay]="idx * 120"
-          >
-            <div class="card-telemetry-header">
+    <!-- 4 Flagship Service Cards Grid -->
+    <div class="services-cards-grid">
+      @for (card of serviceCards; track card.id; let idx = $index) {
+        <article
+          class="service-card-item blueprint-card"
+          appScrollReveal="fade-up"
+          [delay]="idx * 100"
+        >
+          <!-- Card Image Frame with Subtle Zoom -->
+          <div class="card-image-wrap">
+            <img [src]="card.image" [alt]="card.title" class="card-img" loading="lazy" />
+            <div class="card-image-overlay">
               <span class="telemetry-tag">{{ card.tag }}</span>
               <div class="card-icon-circle">
                 <i [class]="card.icon"></i>
               </div>
             </div>
+          </div>
 
+          <div class="card-body">
             <h3 class="card-title">{{ card.title }}</h3>
             <p class="card-desc">{{ card.description }}</p>
 
-            <div class="card-meta-row">
-              <span class="meta-item"><i class="pi pi-clock"></i> {{ card.duration }}</span>
-              <span class="meta-price">From ₹{{ card.price }}</span>
+            <!-- Checkpoints list -->
+            <ul class="card-checkpoints">
+              @for (cp of card.checkpoints; track cp) {
+                <li>
+                  <i class="pi pi-check-circle"></i>
+                  <span>{{ cp }}</span>
+                </li>
+              }
+            </ul>
+
+            <div class="card-footer-meta">
+              <div class="meta-duration">
+                <i class="pi pi-clock"></i>
+                <span>{{ card.duration }}</span>
+              </div>
+              <div class="meta-price">
+                <small>From</small>
+                <strong>₹{{ card.price }}</strong>
+              </div>
             </div>
 
-            <div class="card-actions">
-              <a [routerLink]="['/appointment']" [queryParams]="{ service: card.serviceId }" class="card-book-link">
+            <div class="card-action-row">
+              <a [routerLink]="['/appointment']" [queryParams]="{ service: card.serviceId }" class="btn-primary card-book-action">
                 <span>Book This Service</span>
                 <i class="pi pi-arrow-right"></i>
               </a>
+              <a routerLink="/service" class="card-learn-link">
+                <span>Details</span>
+                <i class="pi pi-angle-right"></i>
+              </a>
             </div>
-
-            <div class="card-corner-glow"></div>
           </div>
-        }
-      </div>
+        </article>
+      }
     </div>
   </div>
 </section>
