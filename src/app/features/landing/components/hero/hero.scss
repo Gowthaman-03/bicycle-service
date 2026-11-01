@@ -1,7 +1,7 @@
 .hero-stage {
   position: relative;
   min-height: 100vh;
-  padding-top: 130px;
+  padding-top: 120px;
   padding-bottom: 70px;
   overflow: hidden;
   background-color: var(--bg-void);
@@ -9,68 +9,103 @@
   align-items: center;
 }
 
-/* Background Atmosphere */
-.hero-studio-backdrop {
+/* ==========================================================================
+   CINEMATIC INDUSTRIAL WORKSHOP ENVIRONMENT BACKDROP
+   ========================================================================== */
+
+.hero-environment-backdrop {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
 
-  .studio-radial-glow {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 900px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 90, 0, 0.12) 0%, rgba(255, 90, 0, 0.03) 45%, transparent 70%);
-    filter: blur(40px);
-  }
-
-  .studio-grid-lines {
+  .env-image-layer {
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.9) 10%, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.9) 10%, transparent 75%);
+    background-image: url('/assets/images/hero-workshop-bg.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    opacity: 0.65;
+    filter: contrast(115%) brightness(0.85);
   }
 
-  .studio-vignette {
+  /* Left-side editorial vignette to ensure 100% crisp typography contrast */
+  .env-text-vignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(4, 6, 9, 0.85) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(4, 6, 9, 0.98) 0%,
+      rgba(4, 6, 9, 0.94) 38%,
+      rgba(4, 6, 9, 0.65) 60%,
+      rgba(4, 6, 9, 0.25) 100%
+    );
+  }
+
+  /* Bottom blend into the following sections */
+  .env-bottom-blend {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to top, #040609 0%, rgba(4, 6, 9, 0.85) 50%, transparent 100%);
+  }
+
+  /* Atmospheric overhead industrial light beam */
+  .env-overhead-spotlight {
+    position: absolute;
+    top: -10%;
+    right: 25%;
+    width: 650px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(255, 90, 0, 0.12) 0%, rgba(255, 255, 255, 0.04) 40%, transparent 70%);
+    filter: blur(45px);
   }
 }
 
 .hero-container {
   position: relative;
   z-index: 1;
+  width: 100%;
+}
+
+/* ==========================================================================
+   SPLIT EDITORIAL GRID LAYOUT
+   ========================================================================== */
+
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 36px;
+  align-items: center;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: BRAND TYPOGRAPHY & ACTIONS
+   ========================================================================== */
+
+.hero-text-col {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: flex-start;
+  z-index: 2;
+  animation: heroTextFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Top Intro Header */
-.hero-intro-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  animation: heroItemFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.brand-discipline-tag {
+.hero-eyebrow-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: rgba(255, 90, 0, 0.08);
   border: 1px solid rgba(255, 90, 0, 0.35);
-  padding: 6px 16px;
-  border-radius: 24px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   .pulsing-accent-dot {
     width: 7px;
@@ -81,293 +116,276 @@
     animation: pulseDot 2s infinite ease-in-out;
   }
 
-  .discipline-text {
+  .eyebrow-text {
     font-family: var(--font-heading);
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     color: var(--primary);
     text-transform: uppercase;
   }
 }
 
-.engineering-badges-strip {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-
-  .spec-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-secondary);
-    letter-spacing: 0.08em;
-    padding: 5px 12px;
-    background: rgba(16, 23, 34, 0.65);
-    border: 1px solid var(--border-subtle);
-    border-radius: 4px;
-
-    i {
-      color: var(--primary);
-      font-size: 11px;
-    }
-  }
-}
-
-/* Editorial Masthead */
-.hero-editorial-masthead {
-  text-align: center;
-  max-width: 960px;
-  margin: 0 auto;
-  animation: heroItemFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
-}
-
-.hero-master-title {
+.hero-headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 6.2vw, 5.2rem);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
   font-weight: 900;
-  line-height: 1.04;
+  line-height: 1.06;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 20px;
-  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
 
-  .line-primary {
+  .headline-row {
     display: block;
   }
 
-  .line-accent {
-    display: block;
+  .text-orange {
     color: var(--primary);
-    text-shadow: 0 0 40px rgba(255, 90, 0, 0.45);
+    text-shadow: 0 0 35px rgba(255, 90, 0, 0.5);
   }
 }
 
-.hero-statement {
+.hero-lead {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
   color: var(--text-secondary);
   line-height: 1.65;
-  max-width: 720px;
-  margin: 0 auto 32px;
+  max-width: 520px;
+  margin-bottom: 32px;
 }
 
-.hero-cta-group {
+.hero-cta-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 
-  .hero-btn-book {
-    padding: 16px 36px;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    box-shadow: 0 8px 24px rgba(255, 90, 0, 0.4);
+  .hero-btn-main {
+    padding: 15px 32px;
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
+    box-shadow: 0 6px 20px rgba(255, 90, 0, 0.4);
   }
 
-  .hero-btn-explore {
-    padding: 16px 32px;
-    font-size: 13px;
-    letter-spacing: 0.12em;
+  .hero-btn-sub {
+    padding: 15px 28px;
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
   }
 }
 
-/* Central 3D Stage */
-.hero-3d-stage {
-  position: relative;
+/* Technical Telemetry & Standards Strip */
+.hero-tech-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
   width: 100%;
-  max-width: 1140px;
-  margin: 10px auto 0;
-  animation: heroBikeFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bike-render-viewport {
-  position: relative;
-  width: 100%;
+.tech-cell {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+
+  .tech-tag {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    i {
+      font-size: 9px;
+    }
+  }
+
+  .tech-title {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .tech-sub {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: 3D BICYCLE PRESENTATION STAGE
+   ========================================================================== */
+
+.hero-visual-col {
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  animation: heroBikeFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.bike-stage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+}
+
+.bike-backdrop-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255, 90, 0, 0.18) 0%, rgba(255, 90, 0, 0.03) 50%, transparent 75%);
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.bike-image-container {
+  position: relative;
+  width: 100%;
   border-radius: 12px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #06090e;
   box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(255, 90, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: radial-gradient(circle at 50% 50%, #0d121c 0%, #040609 85%);
+    0 24px 60px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(255, 90, 0, 0.14);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
-  .hero-bike-render {
+  &:hover {
+    border-color: rgba(255, 90, 0, 0.5);
+    box-shadow:
+      0 32px 80px rgba(0, 0, 0, 0.98),
+      0 0 45px rgba(255, 90, 0, 0.22);
+    transform: translateY(-4px);
+
+    .bike-master-visual {
+      transform: scale(1.02);
+    }
+  }
+
+  .bike-master-visual {
     width: 100%;
     height: auto;
-    max-height: 620px;
+    max-height: 520px;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  &:hover .hero-bike-render {
-    transform: scale(1.015);
-  }
-
-  .studio-floor-reflection {
+  .bike-floor-blend {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 90px;
-    background: linear-gradient(to top, rgba(4, 6, 9, 0.95) 0%, rgba(4, 6, 9, 0.4) 60%, transparent 100%);
+    height: 70px;
+    background: linear-gradient(to top, rgba(4, 6, 9, 0.9) 0%, transparent 100%);
     pointer-events: none;
   }
 }
 
-/* Telemetry Callouts */
-.telemetry-callout {
+/* ==========================================================================
+   ENGINEERING TELEMETRY MARKERS
+   ========================================================================== */
+
+.engineering-marker {
   position: absolute;
-  z-index: 5;
+  z-index: 10;
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: rgba(10, 15, 22, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 90, 0, 0.4);
-  border-radius: 6px;
-  padding: 8px 14px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 90, 0, 0.15);
+  gap: 10px;
   pointer-events: none;
-  animation: calloutFloat 4s infinite ease-in-out;
+  animation: markerFloat 4s infinite ease-in-out;
 
-  .callout-point {
-    width: 8px;
-    height: 8px;
+  .marker-pulse {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--primary);
-    box-shadow: 0 0 8px var(--primary);
+    box-shadow: 0 0 12px var(--primary);
+    position: relative;
+    flex-shrink: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1.5px solid var(--primary);
+      animation: pulseMarkerRing 2s infinite ease-out;
+    }
   }
 
-  .callout-label {
+  .marker-card {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    background: rgba(10, 15, 22, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 90, 0, 0.45);
+    border-radius: 6px;
+    padding: 7px 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 14px rgba(255, 90, 0, 0.12);
 
-    .callout-title {
+    .marker-title {
       font-family: var(--font-heading);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 0.08em;
     }
 
-    .callout-spec {
+    .marker-spec {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--primary);
       letter-spacing: 0.04em;
     }
   }
 
-  &.top-left {
-    top: 14%;
-    left: 4%;
+  &.marker-fork {
+    top: 32%;
+    right: 2%;
     animation-delay: 0s;
   }
 
-  &.top-right {
-    top: 16%;
-    right: 4%;
-    animation-delay: 1.2s;
+  &.marker-shock {
+    top: 48%;
+    left: 28%;
+    animation-delay: 1.4s;
   }
 
-  &.bottom-left {
-    bottom: 12%;
-    left: 8%;
-    animation-delay: 2.4s;
-  }
-}
-
-/* Workshop Advantage Telemetry Bar */
-.hero-telemetry-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 10px;
-  animation: heroItemFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
-}
-
-.telemetry-cell {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 16px 18px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-
-  &:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--primary-border);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 90, 0, 0.1);
-
-    .cell-icon {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 0 14px var(--primary-glow);
-    }
-  }
-
-  .cell-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 6px;
-    background: rgba(255, 90, 0, 0.1);
-    border: 1px solid rgba(255, 90, 0, 0.35);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    flex-shrink: 0;
-    transition: all 0.25s ease;
-  }
-
-  .cell-data {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-
-    strong {
-      font-family: var(--font-heading);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
-
-    span {
-      font-family: var(--font-body);
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-    }
+  &.marker-brake {
+    bottom: 22%;
+    left: 6%;
+    animation-delay: 2.8s;
   }
 }
 
-/* Animations */
-@keyframes heroItemFadeUp {
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+@keyframes heroTextFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -378,7 +396,7 @@
 @keyframes heroBikeFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(36px) scale(0.98);
+    transform: translateY(40px) scale(0.98);
   }
   100% {
     opacity: 1;
@@ -392,28 +410,48 @@
     opacity: 1;
   }
   50% {
-    transform: scale(1.4);
+    transform: scale(1.35);
     opacity: 0.6;
   }
 }
 
-@keyframes calloutFloat {
+@keyframes pulseMarkerRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes markerFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
   }
 }
 
-/* Responsive Breakpoints */
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
 @media (max-width: 1200px) {
-  .hero-telemetry-bar {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-split-grid {
+    grid-template-columns: 48% 52%;
+    gap: 28px;
   }
 
-  .telemetry-callout {
+  .engineering-marker {
     display: none;
+  }
+
+  .hero-tech-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
@@ -421,14 +459,35 @@
   .hero-stage {
     padding-top: 110px;
     padding-bottom: 50px;
+    min-height: auto;
   }
 
-  .hero-intro-header {
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-text-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-actions {
     justify-content: center;
   }
 
-  .engineering-badges-strip {
-    display: none;
+  .hero-tech-strip {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+
+  .bike-stage-wrapper {
+    max-width: 100%;
   }
 }
 
@@ -438,42 +497,46 @@
     padding-bottom: 40px;
   }
 
-  .hero-telemetry-bar {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .hero-cta-group {
+  .hero-cta-actions {
     flex-direction: column;
     width: 100%;
 
-    .hero-btn-book,
-    .hero-btn-explore {
+    .hero-btn-main,
+    .hero-btn-sub {
       width: 100%;
     }
+  }
+
+  .hero-tech-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .brand-discipline-tag {
-    padding: 4px 12px;
+  .hero-eyebrow-badge {
+    padding: 5px 12px;
 
-    .discipline-text {
+    .eyebrow-text {
       font-size: 9.5px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
     }
+  }
+
+  .hero-headline {
+    font-size: 2.1rem;
   }
 }
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-intro-header,
-  .hero-editorial-masthead,
-  .hero-3d-stage,
-  .hero-telemetry-bar,
-  .telemetry-callout,
-  .pulsing-accent-dot {
+  .hero-text-col,
+  .hero-visual-col,
+  .engineering-marker,
+  .pulsing-accent-dot,
+  .bike-image-container .bike-master-visual {
     animation: none !important;
     transform: none !important;
+    transition: none !important;
   }
 }
